@@ -112,10 +112,10 @@ def equals_button():
     try:
         number = float(textbox.get())
         if before_unit.name == after_unit.name:
-            result.config(text=f'{number}')
+            result.config(text=f'{number}{after_unit.symbol}')
         else:
             new_number = after_unit.conversion(before_unit, number)
-            result.config(text=f'{new_number:.3f}')
+            result.config(text=f'{new_number:.3f}{after_unit.symbol}')
     except ValueError:
         result.config(text='-')
     
