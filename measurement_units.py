@@ -300,3 +300,205 @@ class Arcminutes():
         else:
             new_angle = old_angle / 60
         return new_angle
+
+# Area Units ===================================================================
+
+class SquareMetres():
+    def __init__(self):
+        self.name = 'square metres'
+        self.symbol = 'm²'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_area):
+        if old_unit.name == 'square kilometres':
+            new_area = old_area * 1e6
+        elif old_unit.name == 'square miles':
+            new_area = old_area * 2.59e6
+        elif old_unit.name == 'square yards':
+            new_area = old_area / 1.196
+        elif old_unit.name == 'square feet':
+            new_area = old_area / 10.764
+        elif old_unit.name == 'square inches':
+            new_area = old_area / 1550
+        elif old_unit.name == 'hectares':
+            new_area = old_area * 10000
+        else:
+            new_area = old_area * 4047
+        return new_area
+
+class SquareKilometres():
+    def __init__(self):
+        self.name = 'square kilometres'
+        self.symbol = 'km²'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_area):
+        if old_unit.name == 'square metres':
+            new_area = old_area / 1e6
+        elif old_unit.name == 'square miles':
+            new_area = old_area * 2.59
+        elif old_unit.name == 'square yards':
+            new_area = old_area / 1.196e6
+        elif old_unit.name == 'square feet':
+            new_area = old_area / 1.076e7
+        elif old_unit.name == 'square inches':
+            new_area = old_area / 1.55e9
+        elif old_unit.name == 'hectares':
+            new_area = old_area / 100
+        else:
+            new_area = old_area / 247.1
+        return new_area
+
+class SquareMiles():
+    def __init__(self):
+        self.name = 'square miles'
+        self.symbol = 'mi²'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_area):
+        if old_unit.name == 'square metres':
+            new_area = old_area / 2.59e6
+        elif old_unit.name == 'square kilometres':
+            new_area = old_area / 2.59
+        elif old_unit.name == 'square yards':
+            new_area = old_area / 3.098e6
+        elif old_unit.name == 'square feet':
+            new_area = old_area / 2.788e7
+        elif old_unit.name == 'square inches':
+            new_area = old_area / 4.014e9
+        elif old_unit.name == 'hectares':
+            new_area = old_area / 259
+        else:
+            new_area = old_area / 640
+        return new_area
+
+class SquareYards():
+    def __init__(self):
+        self.name = 'square yards'
+        self.symbol = 'yd²'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_area):
+        if old_unit.name == 'square metres':
+            new_area = old_area * 1.196
+        elif old_unit.name == 'square kilometres':
+            new_area = old_area * 1.196e6
+        elif old_unit.name == 'square miles':
+            new_area = old_area * 3.098e6
+        elif old_unit.name == 'square feet':
+            new_area = old_area / 9
+        elif old_unit.name == 'square inches':
+            new_area = old_area / 1296
+        elif old_unit.name == 'hectares':
+            new_area = old_area * 11960
+        else:
+            new_area = old_area * 4840
+        return new_area
+
+class SquareFeet():
+    def __init__(self):
+        self.name = 'square feet'
+        self.symbol = 'ft²'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_area):
+        if old_unit.name == 'square metres':
+            new_area = old_area * 10.764
+        elif old_unit.name == 'square kilometres':
+            new_area = old_area * 1.076e7
+        elif old_unit.name == 'square miles':
+            new_area = old_area * 2.788e7
+        elif old_unit.name == 'square yards':
+            new_area = old_area * 9
+        elif old_unit.name == 'square inches':
+            new_area = old_area / 144
+        elif old_unit.name == 'hectares':
+            new_area = old_area * 107600
+        else:
+            new_area = old_area * 43560
+        return new_area
+
+class SquareInches():
+    def __init__(self):
+        self.name = 'square inches'
+        self.symbol = 'in²'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_area):
+        if old_unit.name == 'square metres':
+            new_area = old_area * 1550
+        elif old_unit.name == 'square kilometres':
+            new_area = old_area * 1.55e9
+        elif old_unit.name == 'square miles':
+            new_area = old_area * 4.014e9
+        elif old_unit.name == 'square yards':
+            new_area = old_area * 1296
+        elif old_unit.name == 'square feet':
+            new_area = old_area * 144
+        elif old_unit.name == 'hectares':
+            new_area = old_area * 1.55e7
+        else:
+            new_area = old_area * 6.273e6
+        return new_area
+
+class Hectares():
+    def __init__(self):
+        self.name = 'hectares'
+        self.symbol = ' ha'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_area):
+        if old_unit.name == 'square metres':
+            new_area = old_area / 10000
+        elif old_unit.name == 'square kilometres':
+            new_area = old_area * 100
+        elif old_unit.name == 'square miles':
+            new_area = old_area * 259
+        elif old_unit.name == 'square yards':
+            new_area = old_area / 11960
+        elif old_unit.name == 'square feet':
+            new_area = old_area / 107600
+        elif old_unit.name == 'square inches':
+            new_area = old_area / 1.55e7
+        else:
+            new_area = old_area / 2.471
+        return new_area
+
+class Acres():
+    def __init__(self):
+        self.name = 'acres'
+        self.symbol = ' ac'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_area):
+        if old_unit.name == 'square metres':
+            new_area = old_area / 4047
+        elif old_unit.name == 'square kilometres':
+            new_area = old_area * 247.1
+        elif old_unit.name == 'square miles':
+            new_area = old_area * 640
+        elif old_unit.name == 'square yards':
+            new_area = old_area / 4840
+        elif old_unit.name == 'square feet':
+            new_area = old_area / 43560
+        elif old_unit.name == 'square inches':
+            new_area = old_area / 6.273e6
+        else:
+            new_area = old_area * 2.471
+        return new_area
