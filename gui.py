@@ -85,7 +85,8 @@ class Temperature():
 
 class Speed():
     def __init__(self):
-        self.mps, self.kph, self.fps, self.mph, self.knots = MetresPerSecond(), KilometresPerHour(), FeetPerSecond(), MilesPerHour(), Knots()
+        self.mps, self.kph, self.fps = MetresPerSecond(), KilometresPerHour(), FeetPerSecond()
+        self.mph, self.knots = MilesPerHour(), Knots()
         self.units = {self.mps: (self.mps_b, self.mps_a), self.kph: (self.kph_b, self.kph_a),
                       self.fps: (self.fps_b, self.fps_a,), self.mph: (self.mph_b, self.mph_a),
                       self.knots: (self.knots_b, self.knots_a)}
@@ -167,7 +168,8 @@ class Speed():
 
 class Angle():
     def __init__(self):
-        self.degree, self.radian, self.milli, self.gradian, self.arcsec, self.arcmin = Degrees(), Radians(), Milliradians(), Gradians(), Arcseconds(), Arcminutes()
+        self.degree, self.radian, self.milli = Degrees(), Radians(), Milliradians()
+        self.gradian, self.arcsec, self.arcmin = Gradians(), Arcseconds(), Arcminutes()
         self.units = {self.degree: (self.degree_b, self.degree_a), self.radian: (self.radian_b, self.radian_a),
                       self.milli: (self.milli_b, self.milli_a), self.gradian: (self.gradian_b, self.gradian_a),
                       self.arcsec: (self.arcsec_b, self.arcsec_a), self.arcmin: (self.arcmin_b, self.arcmin_a)}
@@ -259,6 +261,134 @@ class Angle():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
+# Area Menus =============================================================
+
+class Area():
+    def __init__(self):
+        self.sqm, self.sqkm, self.sqmi = SquareMetres(), SquareKilometres(), SquareMiles()
+        self.sqyd, self.sqft, self.sqin = SquareYards(), SquareFeet(), SquareInches()
+        self.hect, self.acre = Hectares(), Acres()
+        self.units = {self.sqm: (self.sqm_b, self.sqm_a), self.sqkm: (self.sqkm_b, self.sqkm_a),
+                      self.sqmi: (self.sqmi_b, self.sqmi_a), self.sqyd: (self.sqyd_b, self.sqyd_a),
+                      self.sqft: (self.sqft_b, self.sqft_a), self.sqin: (self.sqin_b, self.sqin_a),
+                      self.hect: (self.hect_b, self.hect_a), self.acre: (self.acre_b, self.acre_a)}
+        current_measurement('Area')
+        self.sqm_b()
+        self.sqkm_a()
+
+    def sqm_b(self):
+        units = self.units.copy()
+        del units[self.sqm]
+        unit_before(self.sqm)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def sqkm_b(self):
+        units = self.units.copy()
+        del units[self.sqkm]
+        unit_before(self.sqkm)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def sqmi_b(self):
+        units = self.units.copy()
+        del units[self.sqmi]
+        unit_before(self.sqmi)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def sqyd_b(self):
+        units = self.units.copy()
+        del units[self.sqyd]
+        unit_before(self.sqyd)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def sqft_b(self):
+        units = self.units.copy()
+        del units[self.sqft]
+        unit_before(self.sqft)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def sqin_b(self):
+        units = self.units.copy()
+        del units[self.sqin]
+        unit_before(self.sqin)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def hect_b(self):
+        units = self.units.copy()
+        del units[self.hect]
+        unit_before(self.hect)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def acre_b(self):
+        units = self.units.copy()
+        del units[self.acre]
+        unit_before(self.acre)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def sqm_a(self):
+        units = self.units.copy()
+        del units[self.sqm]
+        unit_after(self.sqm)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def sqkm_a(self):
+        units = self.units.copy()
+        del units[self.sqkm]
+        unit_after(self.sqkm)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def sqmi_a(self):
+        units = self.units.copy()
+        del units[self.sqmi]
+        unit_after(self.sqmi)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def sqyd_a(self):
+        units = self.units.copy()
+        del units[self.sqyd]
+        unit_after(self.sqyd)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def sqft_a(self):
+        units = self.units.copy()
+        del units[self.sqft]
+        unit_after(self.sqft)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def sqin_a(self):
+        units = self.units.copy()
+        del units[self.sqin]
+        unit_after(self.sqin)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def hect_a(self):
+        units = self.units.copy()
+        del units[self.hect]
+        unit_after(self.hect)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def acre_a(self):
+        units = self.units.copy()
+        del units[self.acre]
+        unit_after(self.acre)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+
 def unit_before(unit):
     '''Assigns a unit to be the before unit and changes the menu button of the
     before menu.
@@ -317,7 +447,7 @@ def equals_button():
         result.config(text='-')
 
 # Creates dropdown menu displaying each type of measurement
-measure_types = {'Temperature': Temperature, 'Speed': Speed, 'Angle': Angle}
+measure_types = {'Temperature': Temperature, 'Speed': Speed, 'Angle': Angle, 'Area': Area}
 measurements = Menubutton(window, text='Temperature', font=(0))
 measurements.menu = Menu(measurements, font=(0), tearoff=0)
 measurements['menu'] = measurements.menu

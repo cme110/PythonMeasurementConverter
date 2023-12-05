@@ -56,4 +56,20 @@ def angle():
         print_units(units, title)
         new_unit = valid_unit(options)
     print()
+
+def area():
+    units = [SquareMetres(), SquareKilometres(), SquareMiles(), SquareYards(),
+             SquareFeet(), SquareInches(), Hectares(), Acres()]
+    options = '12345678'
+    title = 'Area'
+    print_units(units, title)
+    new_unit = valid_unit(options)
+    while new_unit not in 'Qq':
+        process_conversion(units, options, title, new_unit)
+
+        units = [SquareMetres(), SquareKilometres(), SquareMiles(), SquareYards(),
+                 SquareFeet(), SquareInches(), Hectares(), Acres()]
+        print_units(units, title)
+        new_unit = valid_unit(options)
+    print()
     
