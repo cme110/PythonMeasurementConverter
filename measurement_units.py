@@ -76,6 +76,349 @@ class Kelvin():
             new_temp = (old_temp - 32) * (5/9) + 273.15
         return new_temp
 
+# Length Units =================================================================
+
+class Metres():
+    def __init__(self):
+        self.name = 'metres'
+        self.symbol = 'm'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'kilometres':
+            new_length = old_length * 1000
+        elif old_unit.name == 'centimetres':
+            new_length = old_length / 100
+        elif old_unit.name == 'millimetres':
+            new_length = old_length / 1000
+        elif old_unit.name == 'micrometres':
+            new_length = old_length / 1e6
+        elif old_unit.name == 'nanometres':
+            new_length = old_length / 1e9
+        elif old_unit.name == 'miles':
+            new_length = old_length * 1609
+        elif old_unit.name == 'yards':
+            new_length = old_length / 1.094
+        elif old_unit.name == 'feet':
+            new_length = old_length / 3.281
+        elif old_unit.name == 'inches':
+            new_length = old_length / 39.37
+        else:
+            new_length = old_length * 1852
+        return new_length
+
+class Kilometres():
+    def __init__(self):
+        self.name = 'kilometres'
+        self.symbol = 'km'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'metres':
+            new_length = old_length / 1000
+        elif old_unit.name == 'centimetres':
+            new_length = old_length / 100000
+        elif old_unit.name == 'millimetres':
+            new_length = old_length / 1e6
+        elif old_unit.name == 'micrometres':
+            new_length = old_length / 1e9
+        elif old_unit.name == 'nanometres':
+            new_length = old_length / 1e12
+        elif old_unit.name == 'miles':
+            new_length = old_length * 1.609
+        elif old_unit.name == 'yards':
+            new_length = old_length / 1094
+        elif old_unit.name == 'feet':
+            new_length = old_length / 3281
+        elif old_unit.name == 'inches':
+            new_length = old_length / 39370
+        else:
+            new_length = old_length * 1.852
+        return new_length
+
+class Centimetres():
+    def __init__(self):
+        self.name = 'centimetres'
+        self.symbol = 'cm'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'metres':
+            new_length = old_length * 100
+        elif old_unit.name == 'kilometres':
+            new_length = old_length * 100000
+        elif old_unit.name == 'millimetres':
+            new_length = old_length / 10
+        elif old_unit.name == 'micrometres':
+            new_length = old_length / 10000
+        elif old_unit.name == 'nanometres':
+            new_length = old_length / 1e7
+        elif old_unit.name == 'miles':
+            new_length = old_length * 160900
+        elif old_unit.name == 'yards':
+            new_length = old_length * 91.44
+        elif old_unit.name == 'feet':
+            new_length = old_length * 30.48
+        elif old_unit.name == 'inches':
+            new_length = old_length * 2.54
+        else:
+            new_length = old_length * 185200
+        return new_length
+
+class Millimetres():
+    def __init__(self):
+        self.name = 'millimetres'
+        self.symbol = 'mm'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'metres':
+            new_length = old_length * 1000
+        elif old_unit.name == 'kilometres':
+            new_length = old_length * 1e6
+        elif old_unit.name == 'centimetres':
+            new_length = old_length * 10
+        elif old_unit.name == 'micrometres':
+            new_length = old_length / 1000
+        elif old_unit.name == 'nanometres':
+            new_length = old_length / 1e6
+        elif old_unit.name == 'miles':
+            new_length = old_length * 1.609e6
+        elif old_unit.name == 'yards':
+            new_length = old_length * 914.4
+        elif old_unit.name == 'feet':
+            new_length = old_length * 304.8
+        elif old_unit.name == 'inches':
+            new_length = old_length * 25.4
+        else:
+            new_length = old_length * 1.852e6
+        return new_length
+
+class Micrometres():
+    def __init__(self):
+        self.name = 'micrometres'
+        self.symbol = 'μm'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'metres':
+            new_length = old_length * 1e6
+        elif old_unit.name == 'kilometres':
+            new_length = old_length * 1e9
+        elif old_unit.name == 'centimetres':
+            new_length = old_length * 10000
+        elif old_unit.name == 'millimetres':
+            new_length = old_length * 1000
+        elif old_unit.name == 'nanometres':
+            new_length = old_length / 1000
+        elif old_unit.name == 'miles':
+            new_length = old_length * 1.609e9
+        elif old_unit.name == 'yards':
+            new_length = old_length * 914400
+        elif old_unit.name == 'feet':
+            new_length = old_length * 304800
+        elif old_unit.name == 'inches':
+            new_length = old_length * 25400
+        else:
+            new_length = old_length * 1.852e9
+        return new_length
+
+class Nanometres():
+    def __init__(self):
+        self.name = 'nanometres'
+        self.symbol = 'nm'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'metres':
+            new_length = old_length * 1e9
+        elif old_unit.name == 'kilometres':
+            new_length = old_length * 1e12
+        elif old_unit.name == 'centimetres':
+            new_length = old_length * 1e7
+        elif old_unit.name == 'millimetres':
+            new_length = old_length * 1e6
+        elif old_unit.name == 'micrometres':
+            new_length = old_length * 1000
+        elif old_unit.name == 'miles':
+            new_length = old_length * 1.609e12
+        elif old_unit.name == 'yards':
+            new_length = old_length * 9.144e8
+        elif old_unit.name == 'feet':
+            new_length = old_length * 3.048e8
+        elif old_unit.name == 'inches':
+            new_length = old_length * 2.54e7
+        else:
+            new_length = old_length * 1.852e12
+        return new_length
+
+class Miles():
+    def __init__(self):
+        self.name = 'miles'
+        self.symbol = 'mi'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'metres':
+            new_length = old_length / 1609
+        elif old_unit.name == 'kilometres':
+            new_length = old_length / 1.609
+        elif old_unit.name == 'centimetres':
+            new_length = old_length / 160900
+        elif old_unit.name == 'millimetres':
+            new_length = old_length / 1.609e6
+        elif old_unit.name == 'micrometres':
+            new_length = old_length / 1.609e9
+        elif old_unit.name == 'nanometres':
+            new_length = old_length / 1.609e12
+        elif old_unit.name == 'yards':
+            new_length = old_length / 1760
+        elif old_unit.name == 'feet':
+            new_length = old_length / 5280
+        elif old_unit.name == 'inches':
+            new_length = old_length / 63360
+        else:
+            new_length = old_length * 1.151
+        return new_length
+
+class Yards():
+    def __init__(self):
+        self.name = 'yards'
+        self.symbol = 'yd'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'metres':
+            new_length = old_length * 1.094
+        elif old_unit.name == 'kilometres':
+            new_length = old_length * 1094
+        elif old_unit.name == 'centimetres':
+            new_length = old_length / 91.44
+        elif old_unit.name == 'millimetres':
+            new_length = old_length / 914.4
+        elif old_unit.name == 'micrometres':
+            new_length = old_length / 914400
+        elif old_unit.name == 'nanometres':
+            new_length = old_length / 9.144e8
+        elif old_unit.name == 'miles':
+            new_length = old_length * 1760
+        elif old_unit.name == 'feet':
+            new_length = old_length / 3
+        elif old_unit.name == 'inches':
+            new_length = old_length / 36
+        else:
+            new_length = old_length * 2025
+        return new_length
+
+class Feet():
+    def __init__(self):
+        self.name = 'feet'
+        self.symbol = 'ft'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'metres':
+            new_length = old_length * 3.281
+        elif old_unit.name == 'kilometres':
+            new_length = old_length * 3281
+        elif old_unit.name == 'centimetres':
+            new_length = old_length / 30.48
+        elif old_unit.name == 'millimetres':
+            new_length = old_length / 304.8
+        elif old_unit.name == 'micrometres':
+            new_length = old_length / 304800
+        elif old_unit.name == 'nanometres':
+            new_length = old_length / 3.048e8
+        elif old_unit.name == 'miles':
+            new_length = old_length * 5280
+        elif old_unit.name == 'yards':
+            new_length = old_length * 3
+        elif old_unit.name == 'inches':
+            new_length = old_length / 12
+        else:
+            new_length = old_length * 6076
+        return new_length
+
+class Inches():
+    def __init__(self):
+        self.name = 'inches'
+        self.symbol = 'in'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'metres':
+            new_length = old_length * 39.37
+        elif old_unit.name == 'kilometres':
+            new_length = old_length * 39370
+        elif old_unit.name == 'centimetres':
+            new_length = old_length / 2.54
+        elif old_unit.name == 'millimetres':
+            new_length = old_length / 25.4
+        elif old_unit.name == 'micrometres':
+            new_length = old_length / 25400
+        elif old_unit.name == 'nanometres':
+            new_length = old_length / 2.54e7
+        elif old_unit.name == 'miles':
+            new_length = old_length * 63360
+        elif old_unit.name == 'yards':
+            new_length = old_length * 36
+        elif old_unit.name == 'feet':
+            new_length = old_length * 12
+        else:
+            new_length = old_length * 72910
+        return new_length
+
+class NauticalMiles():
+    def __init__(self):
+        self.name = 'nautical miles'
+        self.symbol = 'nmi'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_length):
+        if old_unit.name == 'metres':
+            new_length = old_length / 1852
+        elif old_unit.name == 'kilometres':
+            new_length = old_length / 1.852
+        elif old_unit.name == 'centimetres':
+            new_length = old_length / 185200
+        elif old_unit.name == 'millimetres':
+            new_length = old_length / 1.852e6
+        elif old_unit.name == 'micrometres':
+            new_length = old_length / 1.852e9
+        elif old_unit.name == 'nanometres':
+            new_length = old_length / 1.852e12
+        elif old_unit.name == 'miles':
+            new_length = old_length / 1.151
+        elif old_unit.name == 'yards':
+            new_length = old_length / 2025
+        elif old_unit.name == 'feet':
+            new_length = old_length / 6076
+        else:
+            new_length = old_length / 72910
+        return new_length
+
 # Speed Units ===================================================================
 
 class MetresPerSecond():

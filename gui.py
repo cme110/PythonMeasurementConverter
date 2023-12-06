@@ -24,10 +24,10 @@ from tkinter import *
 from measurement_units import *
 
 window = Tk()
-window.title('Converter')
+window.title('Measurement Converter')
 window.geometry('340x90')
 
-# Temperature Menus =============================================================
+# Temperature Menus ============================================================
 
 class Temperature():
     def __init__(self):
@@ -81,7 +81,179 @@ class Temperature():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
-# Speed Menus =============================================================
+# Length Menus =================================================================
+
+class Length():
+    def __init__(self):
+        self.metre, self.kilo, self.centi = Metres(), Kilometres(), Centimetres()
+        self.milli, self.micro, self.nano = Millimetres(), Micrometres(), Nanometres()
+        self.mile, self.yard, self.feet = Miles(), Yards(), Feet()
+        self.inch, self.nautical = Inches(), NauticalMiles()
+        self.units = {self.metre: (self.metre_b, self.metre_a), self.kilo: (self.kilo_b, self.kilo_a),
+                     self.centi: (self.centi_b, self.centi_a), self.milli: (self.milli_b, self.milli_a),
+                     self.micro: (self.micro_b, self.micro_a), self.nano: (self.nano_b, self.nano_a),
+                     self.mile: (self.mile_b, self.mile_a), self.yard: (self.yard_b, self.yard_a),
+                     self.feet: (self.feet_b, self.feet_a), self.inch: (self.inch_b, self.inch_a),
+                     self.nautical: (self.nautical_b, self.nautical_a)}
+        current_measurement('Length')
+        self.kilo_b()
+        self.metre_a()
+
+    def metre_b(self):
+        units = self.units.copy()
+        del units[self.metre]
+        unit_before(self.metre)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def kilo_b(self):
+        units = self.units.copy()
+        del units[self.kilo]
+        unit_before(self.kilo)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def centi_b(self):
+        units = self.units.copy()
+        del units[self.centi]
+        unit_before(self.centi)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def milli_b(self):
+        units = self.units.copy()
+        del units[self.milli]
+        unit_before(self.milli)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def micro_b(self):
+        units = self.units.copy()
+        del units[self.micro]
+        unit_before(self.micro)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def nano_b(self):
+        units = self.units.copy()
+        del units[self.nano]
+        unit_before(self.nano)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def mile_b(self):
+        units = self.units.copy()
+        del units[self.mile]
+        unit_before(self.mile)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def yard_b(self):
+        units = self.units.copy()
+        del units[self.yard]
+        unit_before(self.yard)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def feet_b(self):
+        units = self.units.copy()
+        del units[self.feet]
+        unit_before(self.feet)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def inch_b(self):
+        units = self.units.copy()
+        del units[self.inch]
+        unit_before(self.inch)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def nautical_b(self):
+        units = self.units.copy()
+        del units[self.nautical]
+        unit_before(self.nautical)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def metre_a(self):
+        units = self.units.copy()
+        del units[self.metre]
+        unit_after(self.metre)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def kilo_a(self):
+        units = self.units.copy()
+        del units[self.kilo]
+        unit_after(self.kilo)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def centi_a(self):
+        units = self.units.copy()
+        del units[self.centi]
+        unit_after(self.centi)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def milli_a(self):
+        units = self.units.copy()
+        del units[self.milli]
+        unit_after(self.milli)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def micro_a(self):
+        units = self.units.copy()
+        del units[self.micro]
+        unit_after(self.micro)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def nano_a(self):
+        units = self.units.copy()
+        del units[self.nano]
+        unit_after(self.nano)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def mile_a(self):
+        units = self.units.copy()
+        del units[self.mile]
+        unit_after(self.mile)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def yard_a(self):
+        units = self.units.copy()
+        del units[self.yard]
+        unit_after(self.yard)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def feet_a(self):
+        units = self.units.copy()
+        del units[self.feet]
+        unit_after(self.feet)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def inch_a(self):
+        units = self.units.copy()
+        del units[self.inch]
+        unit_after(self.inch)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def nautical_a(self):
+        units = self.units.copy()
+        del units[self.nautical]
+        unit_after(self.nautical)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+# Speed Menus ==================================================================
 
 class Speed():
     def __init__(self):
@@ -164,7 +336,7 @@ class Speed():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
-# Angle Menus =============================================================
+# Angle Menus ==================================================================
 
 class Angle():
     def __init__(self):
@@ -261,7 +433,7 @@ class Angle():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
-# Area Menus =============================================================
+# Area Menus ===================================================================
 
 class Area():
     def __init__(self):
@@ -273,8 +445,8 @@ class Area():
                       self.sqft: (self.sqft_b, self.sqft_a), self.sqin: (self.sqin_b, self.sqin_a),
                       self.hect: (self.hect_b, self.hect_a), self.acre: (self.acre_b, self.acre_a)}
         current_measurement('Area')
-        self.sqm_b()
-        self.sqkm_a()
+        self.sqkm_b()
+        self.sqm_a()
 
     def sqm_b(self):
         units = self.units.copy()
@@ -386,8 +558,7 @@ class Area():
         del units[self.acre]
         unit_after(self.acre)
         for key, value in units.items():
-            after.menu.add_command(label=key, command=value[1])
-    
+            after.menu.add_command(label=key, command=value[1])    
 
 def unit_before(unit):
     '''Assigns a unit to be the before unit and changes the menu button of the
@@ -442,12 +613,16 @@ def equals_button():
             result.config(text=f'{number}{after_unit.symbol}')
         else:
             new_number = after_unit.conversion(before_unit, number)
-            result.config(text=f'{new_number:.3f}{after_unit.symbol}')
+            if new_number % 1 == 0:
+                result.config(text=f'{new_number:.0f}{after_unit.symbol}')
+            else:
+                result.config(text=f'{new_number:.3f}{after_unit.symbol}')
     except ValueError:
         result.config(text='-')
 
 # Creates dropdown menu displaying each type of measurement
-measure_types = {'Temperature': Temperature, 'Speed': Speed, 'Angle': Angle, 'Area': Area}
+measure_types = {'Temperature': Temperature, 'Length': Length,'Speed': Speed, 'Angle': Angle,
+                 'Area': Area}
 measurements = Menubutton(window, text='Temperature', font=(0))
 measurements.menu = Menu(measurements, font=(0), tearoff=0)
 measurements['menu'] = measurements.menu
