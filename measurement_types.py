@@ -13,7 +13,7 @@ from measurement_units import *
 
 def temperature():
     units = [Celsius(), Fahrenheit(), Kelvin()]
-    options = '123'
+    options = ['1', '2', '3']
     title = 'Temperature'
     print_units(units, title)
     new_unit = valid_unit(options)
@@ -25,10 +25,26 @@ def temperature():
         new_unit = valid_unit(options)
     print()
 
+def length():
+    units = [Metres(), Kilometres(), Centimetres(), Millimetres(), Micrometres(),
+             Nanometres(), Miles(), Yards(), Feet(), Inches(), NauticalMiles()]
+    options = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
+    title = 'Length'
+    print_units(units, title)
+    new_unit = valid_unit(options)
+    while new_unit not in 'Qq':
+        process_conversion(units, options, title, new_unit)
+
+        units = [Metres(), Kilometres(), Centimetres(), Millimetres(), Micrometres(),
+                 Nanometres(), Miles(), Yards(), Feet(), Inches(), NauticalMiles()]
+        print_units(units, title)
+        new_unit = valid_unit(options)
+    print()
+
 def speed():
     units = [MetresPerSecond(), KilometresPerHour(), FeetPerSecond(),
              MilesPerHour(), Knots()]
-    options = '12345'
+    options = ['1', '2', '3', '4', '5']
     title = 'Speed'
     print_units(units, title)
     new_unit = valid_unit(options)
@@ -44,7 +60,7 @@ def speed():
 def angle():
     units = [Degrees(), Radians(), Milliradians(), Gradians(), Arcseconds(),
              Arcminutes()]
-    options = '123456'
+    options = ['1', '2', '3', '4', '5', '6']
     title = 'Angle'
     print_units(units, title)
     new_unit = valid_unit(options)
@@ -60,7 +76,7 @@ def angle():
 def area():
     units = [SquareMetres(), SquareKilometres(), SquareMiles(), SquareYards(),
              SquareFeet(), SquareInches(), Hectares(), Acres()]
-    options = '12345678'
+    options = ['1', '2', '3', '4', '5', '6', '7', '8']
     title = 'Area'
     print_units(units, title)
     new_unit = valid_unit(options)
@@ -72,4 +88,3 @@ def area():
         print_units(units, title)
         new_unit = valid_unit(options)
     print()
-    

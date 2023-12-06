@@ -6,11 +6,12 @@ from measurement_types import *
 
 MEASURE_TYPES = """Types of measurements:
 1: Temperature
-2: Speed
-3: Angle
-4: Area"""
+2: Length
+3: Speed
+4: Angle
+5: Area"""
 
-OPTIONS = ['1', '2', '3', '4', 'Q', 'q']
+OPTIONS = ['1', '2', '3', '4', '5', 'Q', 'q']
     
 def valid_measurement():
     '''Asks user to input a number for the corresponding measurement or 'Q'
@@ -40,10 +41,12 @@ def main():
         if measurement == '1':
             temperature()
         elif measurement == '2':
-            speed()
+            length()
         elif measurement == '3':
-            angle()
+            speed()
         elif measurement == '4':
+            angle()
+        elif measurement == '5':
             area()
         print(MEASURE_TYPES)
         measurement = valid_measurement()
