@@ -419,6 +419,404 @@ class NauticalMiles():
             new_length = old_length / 72910
         return new_length
 
+# Time Units ===================================================================
+
+class Nanoseconds():
+    def __init__(self):
+        self.name = 'nanoseconds'
+        self.symbol = 'ns'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'microseconds':
+            new_time = old_time * 1000
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time * 1e6
+        elif old_unit.name == 'seconds':
+            new_time = old_time * 1e9
+        elif old_unit.name == 'minutes':
+            new_time = old_time * 6e10
+        elif old_unit.name == 'hours':
+            new_time = old_time * 3.6e12
+        elif old_unit.name == 'days':
+            new_time = old_time * 8.64e13
+        elif old_unit.name == 'weeks':
+            new_time = old_time * 6.048e14
+        elif old_unit.name == 'months':
+            new_time = old_time * 2.628e15
+        elif old_unit.name == 'years':
+            new_time = old_time * 3.154e16
+        elif old_unit.name == 'decades':
+            new_time = old_time * 3.154e17
+        else:
+            new_time = old_time * 3.154e18
+        return new_time
+
+class Microseconds():
+    def __init__(self):
+        self.name = 'microseconds'
+        self.symbol = 'μs'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 1000
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time * 1000
+        elif old_unit.name == 'seconds':
+            new_time = old_time * 1e6
+        elif old_unit.name == 'minutes':
+            new_time = old_time * 6e7
+        elif old_unit.name == 'hours':
+            new_time = old_time * 3.6e9
+        elif old_unit.name == 'days':
+            new_time = old_time * 8.64e10
+        elif old_unit.name == 'weeks':
+            new_time = old_time * 6.048e11
+        elif old_unit.name == 'months':
+            new_time = old_time * 2.628e12
+        elif old_unit.name == 'years':
+            new_time = old_time * 3.154e13
+        elif old_unit.name == 'decades':
+            new_time = old_time * 3.154e14
+        else:
+            new_time = old_time * 3.154e15
+        return new_time
+
+class Milliseconds():
+    def __init__(self):
+        self.name = 'milliseconds'
+        self.symbol = 'ms'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 1e6
+        elif old_unit.name == 'microseconds':
+            new_time = old_time / 1000
+        elif old_unit.name == 'seconds':
+            new_time = old_time * 1000
+        elif old_unit.name == 'minutes':
+            new_time = old_time * 60000
+        elif old_unit.name == 'hours':
+            new_time = old_time * 3.6e6
+        elif old_unit.name == 'days':
+            new_time = old_time * 8.64e7
+        elif old_unit.name == 'weeks':
+            new_time = old_time * 6.048e8
+        elif old_unit.name == 'months':
+            new_time = old_time * 2.628e9
+        elif old_unit.name == 'years':
+            new_time = old_time * 3.154e10
+        elif old_unit.name == 'decades':
+            new_time = old_time * 3.154e11
+        else:
+            new_time = old_time * 3.154e12
+        return new_time
+
+class Seconds():
+    def __init__(self):
+        self.name = 'seconds'
+        self.symbol = 's'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 1e9
+        elif old_unit.name == 'microseconds':
+            new_time = old_time / 1e6
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time / 1000
+        elif old_unit.name == 'minutes':
+            new_time = old_time * 60
+        elif old_unit.name == 'hours':
+            new_time = old_time * 3600
+        elif old_unit.name == 'days':
+            new_time = old_time * 86400
+        elif old_unit.name == 'weeks':
+            new_time = old_time * 604800
+        elif old_unit.name == 'months':
+            new_time = old_time * 2.628e6
+        elif old_unit.name == 'years':
+            new_time = old_time * 3.154e7
+        elif old_unit.name == 'decades':
+            new_time = old_time * 3.154e8
+        else:
+            new_time = old_time * 3.154e9
+        return new_time
+
+class Minutes():
+    def __init__(self):
+        self.name = 'minutes'
+        self.symbol = 'min'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 6e10
+        elif old_unit.name == 'microseconds':
+            new_time = old_time / 6e7
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time / 60000
+        elif old_unit.name == 'seconds':
+            new_time = old_time / 60
+        elif old_unit.name == 'hours':
+            new_time = old_time * 60
+        elif old_unit.name == 'days':
+            new_time = old_time * 1440
+        elif old_unit.name == 'weeks':
+            new_time = old_time * 10080
+        elif old_unit.name == 'months':
+            new_time = old_time * 43800
+        elif old_unit.name == 'years':
+            new_time = old_time * 525600
+        elif old_unit.name == 'decades':
+            new_time = old_time * 5.256e6
+        else:
+            new_time = old_time * 5.256e7
+        return new_time
+
+class Hours():
+    def __init__(self):
+        self.name = 'hours'
+        self.symbol = 'h'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 3.6e12
+        elif old_unit.name == 'microseconds':
+            new_time = old_time / 3.6e9
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time / 3.6e6
+        elif old_unit.name == 'seconds':
+            new_time = old_time / 3600
+        elif old_unit.name == 'minutes':
+            new_time = old_time / 60
+        elif old_unit.name == 'days':
+            new_time = old_time * 24
+        elif old_unit.name == 'weeks':
+            new_time = old_time * 168
+        elif old_unit.name == 'months':
+            new_time = old_time * 730
+        elif old_unit.name == 'years':
+            new_time = old_time * 8760
+        elif old_unit.name == 'decades':
+            new_time = old_time * 87600
+        else:
+            new_time = old_time * 876000
+        return new_time
+
+class Days():
+    def __init__(self):
+        self.name = 'days'
+        self.symbol = 'd'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 8.64e13
+        elif old_unit.name == 'microseconds':
+            new_time = old_time / 8.64e10
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time / 8.64e7
+        elif old_unit.name == 'seconds':
+            new_time = old_time / 86400
+        elif old_unit.name == 'minutes':
+            new_time = old_time / 1440
+        elif old_unit.name == 'hours':
+            new_time = old_time / 24
+        elif old_unit.name == 'weeks':
+            new_time = old_time * 7
+        elif old_unit.name == 'months':
+            new_time = old_time * 30.417
+        elif old_unit.name == 'years':
+            new_time = old_time * 365
+        elif old_unit.name == 'decades':
+            new_time = old_time * 3650
+        else:
+            new_time = old_time * 36500
+        return new_time
+
+class Weeks():
+    def __init__(self):
+        self.name = 'weeks'
+        self.symbol = 'wk'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 6.048e14
+        elif old_unit.name == 'microseconds':
+            new_time = old_time / 6.048e11
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time / 6.048e8
+        elif old_unit.name == 'seconds':
+            new_time = old_time / 604800
+        elif old_unit.name == 'minutes':
+            new_time = old_time / 10080
+        elif old_unit.name == 'hours':
+            new_time = old_time / 168
+        elif old_unit.name == 'days':
+            new_time = old_time / 7
+        elif old_unit.name == 'months':
+            new_time = old_time * 4.345
+        elif old_unit.name == 'years':
+            new_time = old_time * 52.143
+        elif old_unit.name == 'decades':
+            new_time = old_time * 521.4
+        else:
+            new_time = old_time * 5214
+        return new_time
+
+class Months():
+    def __init__(self):
+        self.name = 'months'
+        self.symbol = 'mo'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 2.628e15
+        elif old_unit.name == 'microseconds':
+            new_time = old_time / 2.628e12
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time / 2.628e9
+        elif old_unit.name == 'seconds':
+            new_time = old_time / 2.628e6
+        elif old_unit.name == 'minutes':
+            new_time = old_time / 43800
+        elif old_unit.name == 'hours':
+            new_time = old_time / 730
+        elif old_unit.name == 'days':
+            new_time = old_time / 30.417
+        elif old_unit.name == 'weeks':
+            new_time = old_time / 4.345
+        elif old_unit.name == 'years':
+            new_time = old_time * 12
+        elif old_unit.name == 'decades':
+            new_time = old_time * 120
+        else:
+            new_time = old_time * 1200
+        return new_time
+
+class Years():
+    def __init__(self):
+        self.name = 'years'
+        self.symbol = 'yr'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 3.154e16
+        elif old_unit.name == 'microseconds':
+            new_time = old_time / 3.154e13
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time / 3.154e10
+        elif old_unit.name == 'seconds':
+            new_time = old_time / 3.154e7
+        elif old_unit.name == 'minutes':
+            new_time = old_time / 525600
+        elif old_unit.name == 'hours':
+            new_time = old_time / 8760
+        elif old_unit.name == 'days':
+            new_time = old_time / 365
+        elif old_unit.name == 'weeks':
+            new_time = old_time / 52.143
+        elif old_unit.name == 'months':
+            new_time = old_time / 12
+        elif old_unit.name == 'decades':
+            new_time = old_time * 10
+        else:
+            new_time = old_time * 100
+        return new_time
+
+class Decades():
+    def __init__(self):
+        self.name = 'decades'
+        self.symbol = 'dec'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 3.154e17
+        elif old_unit.name == 'microseconds':
+            new_time = old_time / 3.154e14
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time / 3.154e11
+        elif old_unit.name == 'seconds':
+            new_time = old_time / 3.154e8
+        elif old_unit.name == 'minutes':
+            new_time = old_time / 5.256e6
+        elif old_unit.name == 'hours':
+            new_time = old_time / 87600
+        elif old_unit.name == 'days':
+            new_time = old_time / 3650
+        elif old_unit.name == 'weeks':
+            new_time = old_time / 521.4
+        elif old_unit.name == 'months':
+            new_time = old_time / 120
+        elif old_unit.name == 'years':
+            new_time = old_time / 10
+        else:
+            new_time = old_time * 10
+        return new_time
+
+class Centuries():
+    def __init__(self):
+        self.name = 'centuries'
+        self.symbol = 'c'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_time):
+        if old_unit.name == 'nanoseconds':
+            new_time = old_time / 3.154e18
+        elif old_unit.name == 'microseconds':
+            new_time = old_time / 3.154e15
+        elif old_unit.name == 'milliseconds':
+            new_time = old_time / 3.154e12
+        elif old_unit.name == 'seconds':
+            new_time = old_time / 3.154e9
+        elif old_unit.name == 'minutes':
+            new_time = old_time / 5.256e7
+        elif old_unit.name == 'hours':
+            new_time = old_time / 876000
+        elif old_unit.name == 'days':
+            new_time = old_time / 36500
+        elif old_unit.name == 'weeks':
+            new_time = old_time / 5214
+        elif old_unit.name == 'months':
+            new_time = old_time / 1200
+        elif old_unit.name == 'years':
+            new_time = old_time / 100
+        else:
+            new_time = old_time / 10
+        return new_time
+
 # Speed Units ===================================================================
 
 class MetresPerSecond():
