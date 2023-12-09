@@ -1,6 +1,6 @@
 '''The module for processing specific types of measurement conversions.
 
-All functions contain a list of unit classes, a string of possible input
+All functions contain a list of unit classes, a list of possible input
 options and a string of the type of conversion. Units are printed, and user is
 asked to input a number for the corresponding unit (which is removed from units
 list), or input 'Q' for quit. While input is not 'Q', conversion to new unit is
@@ -37,6 +37,22 @@ def length():
 
         units = [Metres(), Kilometres(), Centimetres(), Millimetres(), Micrometres(),
                  Nanometres(), Miles(), Yards(), Feet(), Inches(), NauticalMiles()]
+        print_units(units, title)
+        new_unit = valid_unit(options)
+    print()
+
+def time():
+    units = [Nanoseconds(), Microseconds(), Milliseconds(), Seconds(), Minutes(),
+             Hours(), Days(), Weeks(), Months(), Years(), Decades(), Centuries()]
+    options = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+    title = 'Time'
+    print_units(units, title)
+    new_unit = valid_unit(options)
+    while new_unit not in 'Qq':
+        process_conversion(units, options, title, new_unit)
+
+        units = [Nanoseconds(), Microseconds(), Milliseconds(), Seconds(), Minutes(),
+                Hours(), Days(), Weeks(), Months(), Years(), Decades(), Centuries()]
         print_units(units, title)
         new_unit = valid_unit(options)
     print()

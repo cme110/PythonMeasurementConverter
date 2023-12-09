@@ -252,6 +252,192 @@ class Length():
         unit_after(self.nautical)
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
+
+# Time Menus ==================================================================
+
+class Time():
+    def __init__(self):
+        self.nano, self.micro, self.milli = Nanoseconds(), Microseconds(), Milliseconds()
+        self.sec, self.min, self.hour, = Seconds(), Minutes(), Hours()
+        self.day, self.week, self.month = Days(), Weeks(), Months()
+        self.year, self.deca, self.cent = Years(), Decades(), Centuries()
+        self.units = {self.nano: (self.nano_b, self.nano_a), self.micro: (self.micro_b, self.micro_a),
+                      self.milli: (self.milli_b, self.milli_a), self.sec: (self.sec_b, self.sec_a),
+                      self.min: (self.min_b, self.min_a), self.hour: (self.hour_b, self.hour_a),
+                      self.day: (self.day_b, self.day_a), self.week: (self.week_b, self.week_a),
+                      self.month: (self.month_b, self.month_a), self.year: (self.year_b, self.year_a),
+                      self.deca: (self.deca_b, self.deca_a), self.cent: (self.cent_b, self.cent_a)}
+        current_measurement('Time')
+        self.min_b()
+        self.sec_a()
+    
+    def nano_b(self):
+        units = self.units.copy()
+        del units[self.nano]
+        unit_before(self.nano)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def micro_b(self):
+        units = self.units.copy()
+        del units[self.micro]
+        unit_before(self.micro)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def milli_b(self):
+        units = self.units.copy()
+        del units[self.milli]
+        unit_before(self.milli)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def sec_b(self):
+        units = self.units.copy()
+        del units[self.sec]
+        unit_before(self.sec)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def min_b(self):
+        units = self.units.copy()
+        del units[self.min]
+        unit_before(self.min)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def hour_b(self):
+        units = self.units.copy()
+        del units[self.hour]
+        unit_before(self.hour)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def day_b(self):
+        units = self.units.copy()
+        del units[self.day]
+        unit_before(self.day)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def week_b(self):
+        units = self.units.copy()
+        del units[self.week]
+        unit_before(self.week)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def month_b(self):
+        units = self.units.copy()
+        del units[self.month]
+        unit_before(self.month)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def year_b(self):
+        units = self.units.copy()
+        del units[self.year]
+        unit_before(self.year)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def deca_b(self):
+        units = self.units.copy()
+        del units[self.deca]
+        unit_before(self.deca)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def cent_b(self):
+        units = self.units.copy()
+        del units[self.cent]
+        unit_before(self.cent)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def nano_a(self):
+        units = self.units.copy()
+        del units[self.nano]
+        unit_after(self.nano)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def micro_a(self):
+        units = self.units.copy()
+        del units[self.micro]
+        unit_after(self.micro)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def milli_a(self):
+        units = self.units.copy()
+        del units[self.milli]
+        unit_after(self.milli)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def sec_a(self):
+        units = self.units.copy()
+        del units[self.sec]
+        unit_after(self.sec)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def min_a(self):
+        units = self.units.copy()
+        del units[self.min]
+        unit_after(self.min)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def hour_a(self):
+        units = self.units.copy()
+        del units[self.hour]
+        unit_after(self.hour)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def day_a(self):
+        units = self.units.copy()
+        del units[self.day]
+        unit_after(self.day)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def week_a(self):
+        units = self.units.copy()
+        del units[self.week]
+        unit_after(self.week)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def month_a(self):
+        units = self.units.copy()
+        del units[self.month]
+        unit_after(self.month)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def year_a(self):
+        units = self.units.copy()
+        del units[self.year]
+        unit_after(self.year)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def deca_a(self):
+        units = self.units.copy()
+        del units[self.deca]
+        unit_after(self.deca)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def cent_a(self):
+        units = self.units.copy()
+        del units[self.cent]
+        unit_after(self.cent)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
     
 # Speed Menus ==================================================================
 
@@ -621,8 +807,8 @@ def equals_button():
         result.config(text='-')
 
 # Creates dropdown menu displaying each type of measurement
-measure_types = {'Temperature': Temperature, 'Length': Length,'Speed': Speed, 'Angle': Angle,
-                 'Area': Area}
+measure_types = {'Temperature': Temperature, 'Length': Length, 'Time': Time, 'Speed': Speed, 
+                 'Angle': Angle, 'Area': Area}
 measurements = Menubutton(window, text='Temperature', font=(0))
 measurements.menu = Menu(measurements, font=(0), tearoff=0)
 measurements['menu'] = measurements.menu
