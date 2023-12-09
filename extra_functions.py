@@ -19,12 +19,19 @@ def valid_unit(options, chosen_unit=None):
     
     if chosen_unit == None:
         prompt = "Select a unit to convert to, or type 'Q' to go back: "
+        unit = input(prompt)
+        while unit not in options and unit not in 'Qq':
+            print("Invalid. Try again")
+            unit = input(prompt)
     else:
         prompt = f"Which unit are you converting to {chosen_unit}? "
-    unit = input(prompt)
-    while unit not in options and unit not in 'Qq':
-        print("Invalid. Try again")
         unit = input(prompt)
+        while unit not in options:
+            if unit in 'Qq':
+                print("You cannot quit now. Try again")
+            else:
+                print("Invalid. Try again")
+            unit = input(prompt)
     return unit
 
 def valid_number(measurement, unit):
@@ -69,8 +76,10 @@ def print_conversion(before_num, before_symbol, after_num, after_symbol):
         after_num (float): The amount of the new unit after conversion
         after_symbol (str): The symbol of the new unit
     '''
-    
-    print(f"\n{before_num}{before_symbol} = {after_num:.3f}{after_symbol}")
+    if after_num % 1 == 0:
+        print(f"\n{before_num}{before_symbol} = {after_num:.0f}{after_symbol}")
+    else:
+        print(f"\n{before_num}{before_symbol} = {after_num:.3f}{after_symbol}")
 
 def process_conversion(units, options, title, new_unit):
     '''Assigns new unit to convert to. Prints remaining units. Gets and assigns
