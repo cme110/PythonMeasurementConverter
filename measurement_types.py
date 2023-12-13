@@ -41,6 +41,22 @@ def length():
         new_unit = valid_unit(options)
     print()
 
+def mass():
+    units = [Grams(), Kilograms(), Tonnes(), Milligrams(), Micrograms(),
+             Ounces(), Pounds(), Stone(), ImperialTons(), USTons()]
+    options = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+    title = 'Mass'
+    print_units(units, title)
+    new_unit = valid_unit(options)
+    while new_unit not in 'Qq':
+        process_conversion(units, options, title, new_unit)
+
+        units = [Grams(), Kilograms(), Tonnes(), Milligrams(), Micrograms(),
+                Ounces(), Pounds(), Stone(), ImperialTons(), USTons()]
+        print_units(units, title)
+        new_unit = valid_unit(options)
+    print()
+
 def time():
     units = [Nanoseconds(), Microseconds(), Milliseconds(), Seconds(), Minutes(),
              Hours(), Days(), Weeks(), Months(), Years(), Decades(), Centuries()]

@@ -7,12 +7,13 @@ from measurement_types import *
 MEASURE_TYPES = """Types of measurements:
 1: Temperature
 2: Length
-3: Time
-4: Speed
-5: Angle
-6: Area"""
+3: Mass
+4: Time
+5: Speed
+6: Angle
+7: Area"""
 
-OPTIONS = ['1', '2', '3', '4', '5', '6', 'Q', 'q']
+OPTIONS = ['1', '2', '3', '4', '5', '6', '7', 'Q', 'q']
     
 def valid_measurement():
     '''Asks user to input a number for the corresponding measurement or 'Q'
@@ -44,12 +45,14 @@ def main():
         elif measurement == '2':
             length()
         elif measurement == '3':
-            time()
+            mass()
         elif measurement == '4':
-            speed()
+            time()
         elif measurement == '5':
-            angle()
+            speed()
         elif measurement == '6':
+            angle()
+        elif measurement == '7':
             area()
         print(MEASURE_TYPES)
         measurement = valid_measurement()

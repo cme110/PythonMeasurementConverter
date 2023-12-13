@@ -419,6 +419,298 @@ class NauticalMiles():
             new_length = old_length / 72910
         return new_length
 
+# Mass Units ===================================================================
+
+class Grams():
+    def __init__(self):
+        self.name = 'grams'
+        self.symbol = 'g'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_mass):
+        if old_unit.name == 'kilograms':
+            new_mass = old_mass * 1000
+        elif old_unit.name == 'tonnes':
+            new_mass = old_mass * 1e6
+        elif old_unit.name == 'milligrams':
+            new_mass = old_mass / 1000
+        elif old_unit.name == 'micrograms':
+            new_mass = old_mass / 1e6
+        elif old_unit.name == 'ounces':
+            new_mass = old_mass * 28.35
+        elif old_unit.name == 'pounds':
+            new_mass = old_mass * 453.6
+        elif old_unit.name == 'stone':
+            new_mass = old_mass * 6350
+        elif old_unit.name == 'imperial tons':
+            new_mass = old_mass * 1.016e6
+        else:
+            new_mass = old_mass * 907200
+        return new_mass
+
+class Kilograms():
+    def __init__(self):
+        self.name = 'kilograms'
+        self.symbol = 'kg'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_mass):
+        if old_unit.name == 'grams':
+            new_mass = old_mass / 1000
+        elif old_unit.name == 'tonnes':
+            new_mass = old_mass * 1000
+        elif old_unit.name == 'milligrams':
+            new_mass = old_mass / 1e6
+        elif old_unit.name == 'micrograms':
+            new_mass = old_mass / 1e9
+        elif old_unit.name == 'ounces':
+            new_mass = old_mass / 35.274
+        elif old_unit.name == 'pounds':
+            new_mass = old_mass / 2.205
+        elif old_unit.name == 'stone':
+            new_mass = old_mass * 6.35
+        elif old_unit.name == 'imperial tons':
+            new_mass = old_mass * 1016
+        else:
+            new_mass = old_mass * 907.2
+        return new_mass
+
+class Tonnes():
+    def __init__(self):
+        self.name = 'tonnes'
+        self.symbol = 't'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_mass):
+        if old_unit.name == 'grams':
+            new_mass = old_mass / 1e6
+        elif old_unit.name == 'kilograms':
+            new_mass = old_mass / 1000
+        elif old_unit.name == 'milligrams':
+            new_mass = old_mass / 1e9
+        elif old_unit.name == 'micrograms':
+            new_mass = old_mass / 1e12
+        elif old_unit.name == 'ounces':
+            new_mass = old_mass / 35270
+        elif old_unit.name == 'pounds':
+            new_mass = old_mass / 2205
+        elif old_unit.name == 'stone':
+            new_mass = old_mass / 157.5
+        elif old_unit.name == 'imperial tons':
+            new_mass = old_mass * 1.016
+        else:
+            new_mass = old_mass / 1.102
+        return new_mass
+
+class Milligrams():
+    def __init__(self):
+        self.name = 'milligrams'
+        self.symbol = 'mg'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_mass):
+        if old_unit.name == 'grams':
+            new_mass = old_mass * 1000
+        elif old_unit.name == 'kilograms':
+            new_mass = old_mass * 1e6
+        elif old_unit.name == 'tonnes':
+            new_mass = old_mass * 1e9
+        elif old_unit.name == 'micrograms':
+            new_mass = old_mass / 1000
+        elif old_unit.name == 'ounces':
+            new_mass = old_mass * 28350
+        elif old_unit.name == 'pounds':
+            new_mass = old_mass * 453600
+        elif old_unit.name == 'stone':
+            new_mass = old_mass * 6.35e6
+        elif old_unit.name == 'imperial tons':
+            new_mass = old_mass * 1.016e9
+        else:
+            new_mass = old_mass * 9.072e8
+        return new_mass
+
+class Micrograms():
+    def __init__(self):
+        self.name = 'micrograms'
+        self.symbol = 'μg'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_mass):
+        if old_unit.name == 'grams':
+            new_mass = old_mass * 1e6
+        elif old_unit.name == 'kilograms':
+            new_mass = old_mass * 1e9
+        elif old_unit.name == 'tonnes':
+            new_mass = old_mass * 1e12
+        elif old_unit.name == 'milligrams':
+            new_mass = old_mass * 1000
+        elif old_unit.name == 'ounces':
+            new_mass = old_mass * 2.835e7
+        elif old_unit.name == 'pounds':
+            new_mass = old_mass * 4.536e8
+        elif old_unit.name == 'stone':
+            new_mass = old_mass * 6.35e9
+        elif old_unit.name == 'imperial tons':
+            new_mass = old_mass * 1.016e12
+        else:
+            new_mass = old_mass * 9.072e11
+        return new_mass
+
+class Ounces():
+    def __init__(self):
+        self.name = 'ounces'
+        self.symbol = 'oz'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_mass):
+        if old_unit.name == 'grams':
+            new_mass = old_mass / 28.35
+        elif old_unit.name == 'kilograms':
+            new_mass = old_mass * 35.274
+        elif old_unit.name == 'tonnes':
+            new_mass = old_mass * 35270
+        elif old_unit.name == 'milligrams':
+            new_mass = old_mass / 28350
+        elif old_unit.name == 'micrograms':
+            new_mass = old_mass / 2.835e7
+        elif old_unit.name == 'pounds':
+            new_mass = old_mass * 16
+        elif old_unit.name == 'stone':
+            new_mass = old_mass * 224
+        elif old_unit.name == 'imperial tons':
+            new_mass = old_mass * 35840
+        else:
+            new_mass = old_mass * 32000
+        return new_mass
+
+class Pounds():
+    def __init__(self):
+        self.name = 'pounds'
+        self.symbol = 'lb'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_mass):
+        if old_unit.name == 'grams':
+            new_mass = old_mass / 453.6
+        elif old_unit.name == 'kilograms':
+            new_mass = old_mass * 2.205
+        elif old_unit.name == 'tonnes':
+            new_mass = old_mass * 2205
+        elif old_unit.name == 'milligrams':
+            new_mass = old_mass / 453600
+        elif old_unit.name == 'micrograms':
+            new_mass = old_mass / 4.536e8
+        elif old_unit.name == 'ounces':
+            new_mass = old_mass / 16
+        elif old_unit.name == 'stone':
+            new_mass = old_mass * 14
+        elif old_unit.name == 'imperial tons':
+            new_mass = old_mass * 2240
+        else:
+            new_mass = old_mass * 2000
+        return new_mass
+
+class Stone():
+    def __init__(self):
+        self.name = 'stone'
+        self.symbol = 'st'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_mass):
+        if old_unit.name == 'grams':
+            new_mass = old_mass / 6350
+        elif old_unit.name == 'kilograms':
+            new_mass = old_mass / 6.35
+        elif old_unit.name == 'tonnes':
+            new_mass = old_mass * 157.5
+        elif old_unit.name == 'milligrams':
+            new_mass = old_mass / 6.35e6
+        elif old_unit.name == 'micrograms':
+            new_mass = old_mass / 6.35e9
+        elif old_unit.name == 'ounces':
+            new_mass = old_mass / 224
+        elif old_unit.name == 'pounds':
+            new_mass = old_mass / 14
+        elif old_unit.name == 'imperial tons':
+            new_mass = old_mass * 160
+        else:
+            new_mass = old_mass * 142.9
+        return new_mass
+
+class ImperialTons():
+    def __init__(self):
+        self.name = 'imperial tons'
+        self.symbol = 'LT'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_mass):
+        if old_unit.name == 'grams':
+            new_mass = old_mass / 1.016e6
+        elif old_unit.name == 'kilograms':
+            new_mass = old_mass / 1016
+        elif old_unit.name == 'tonnes':
+            new_mass = old_mass / 1.016
+        elif old_unit.name == 'milligrams':
+            new_mass = old_mass / 1.016e9
+        elif old_unit.name == 'micrograms':
+            new_mass = old_mass / 1.016e12
+        elif old_unit.name == 'ounces':
+            new_mass = old_mass / 35840
+        elif old_unit.name == 'pounds':
+            new_mass = old_mass / 2240
+        elif old_unit.name == 'stone':
+            new_mass = old_mass / 160
+        else:
+            new_mass = old_mass / 1.12
+        return new_mass
+
+class USTons():
+    def __init__(self):
+        self.name = 'US tons'
+        self.symbol = 'tn'
+    
+    def __repr__(self):
+        return self.name
+
+    def conversion(self, old_unit, old_mass):
+        if old_unit.name == 'grams':
+            new_mass = old_mass / 907200
+        elif old_unit.name == 'kilograms':
+            new_mass = old_mass / 907.2
+        elif old_unit.name == 'tonnes':
+            new_mass = old_mass * 1.102
+        elif old_unit.name == 'milligrams':
+            new_mass = old_mass / 9.072e8
+        elif old_unit.name == 'micrograms':
+            new_mass = old_mass / 9.072e11
+        elif old_unit.name == 'ounces':
+            new_mass = old_mass / 32000
+        elif old_unit.name == 'pounds':
+            new_mass = old_mass / 2000
+        elif old_unit.name == 'stone':
+            new_mass = old_mass / 142.9
+        else:
+            new_mass = old_mass * 1.12
+        return new_mass
+
 # Time Units ===================================================================
 
 class Nanoseconds():

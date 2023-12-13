@@ -253,6 +253,162 @@ class Length():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
+# Mass Menus ==================================================================
+
+class Mass():
+    def __init__(self):
+        self.gram, self.kilo, self.tonne = Grams(), Kilograms(), Tonnes()
+        self.milli, self.micro, self.ounce = Milligrams(), Micrograms(), Ounces()
+        self.pound, self.stone, self.imperial, self.us = Pounds(), Stone(), ImperialTons(), USTons()
+        self.units = {self.gram: (self.gram_b, self.gram_a), self.kilo: (self.kilo_b, self.kilo_a),
+                      self.tonne: (self.tonne_b, self.tonne_a), self.milli: (self.milli_b, self.milli_a),
+                      self.micro: (self.micro_b, self.micro_a), self.ounce: (self.ounce_b, self.ounce_a),
+                      self.pound: (self.pound_b, self.pound_a), self.stone: (self.stone_b, self.stone_a),
+                      self.imperial: (self.imperial_b, self.imperial_a), self.us: (self.us_b, self.us_a)}
+        current_measurement('Mass')
+        self.kilo_b()
+        self.gram_a()
+    
+    def gram_b(self):
+        units = self.units.copy()
+        del units[self.gram]
+        unit_before(self.gram)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def kilo_b(self):
+        units = self.units.copy()
+        del units[self.kilo]
+        unit_before(self.kilo)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def tonne_b(self):
+        units = self.units.copy()
+        del units[self.tonne]
+        unit_before(self.tonne)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def milli_b(self):
+        units = self.units.copy()
+        del units[self.milli]
+        unit_before(self.milli)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def micro_b(self):
+        units = self.units.copy()
+        del units[self.micro]
+        unit_before(self.micro)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def ounce_b(self):
+        units = self.units.copy()
+        del units[self.ounce]
+        unit_before(self.ounce)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def pound_b(self):
+        units = self.units.copy()
+        del units[self.pound]
+        unit_before(self.pound)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def stone_b(self):
+        units = self.units.copy()
+        del units[self.stone]
+        unit_before(self.stone)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def imperial_b(self):
+        units = self.units.copy()
+        del units[self.imperial]
+        unit_before(self.imperial)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def us_b(self):
+        units = self.units.copy()
+        del units[self.us]
+        unit_before(self.us)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def gram_a(self):
+        units = self.units.copy()
+        del units[self.gram]
+        unit_after(self.gram)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def kilo_a(self):
+        units = self.units.copy()
+        del units[self.kilo]
+        unit_after(self.kilo)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def tonne_a(self):
+        units = self.units.copy()
+        del units[self.tonne]
+        unit_after(self.tonne)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def milli_a(self):
+        units = self.units.copy()
+        del units[self.milli]
+        unit_after(self.milli)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def micro_a(self):
+        units = self.units.copy()
+        del units[self.micro]
+        unit_after(self.micro)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def ounce_a(self):
+        units = self.units.copy()
+        del units[self.ounce]
+        unit_after(self.ounce)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def pound_a(self):
+        units = self.units.copy()
+        del units[self.pound]
+        unit_after(self.pound)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def stone_a(self):
+        units = self.units.copy()
+        del units[self.stone]
+        unit_after(self.stone)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def imperial_a(self):
+        units = self.units.copy()
+        del units[self.imperial]
+        unit_after(self.imperial)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def us_a(self):
+        units = self.units.copy()
+        del units[self.us]
+        unit_after(self.us)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
 # Time Menus ==================================================================
 
 class Time():
@@ -796,7 +952,10 @@ def equals_button():
     try:
         number = float(textbox.get())
         if before_unit.name == after_unit.name:
-            result.config(text=f'{number}{after_unit.symbol}')
+            if number % 1 == 0:
+                result.config(text=f'{number:.0f}{after_unit.symbol}')
+            else:
+                result.config(text=f'{number}{after_unit.symbol}')
         else:
             new_number = after_unit.conversion(before_unit, number)
             if new_number % 1 == 0:
@@ -807,8 +966,8 @@ def equals_button():
         result.config(text='-')
 
 # Creates dropdown menu displaying each type of measurement
-measure_types = {'Temperature': Temperature, 'Length': Length, 'Time': Time, 'Speed': Speed, 
-                 'Angle': Angle, 'Area': Area}
+measure_types = {'Temperature': Temperature, 'Length': Length, 'Mass': Mass, 'Time': Time, 
+                 'Speed': Speed, 'Angle': Angle, 'Area': Area}
 measurements = Menubutton(window, text='Temperature', font=(0))
 measurements.menu = Menu(measurements, font=(0), tearoff=0)
 measurements['menu'] = measurements.menu
