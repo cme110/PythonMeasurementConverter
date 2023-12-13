@@ -4,9 +4,11 @@ inputs, printing units and conversions, and processing measurement conversions.
 
 def valid_unit(options, chosen_unit=None):
     '''Chooses prompt based on if there's a chosen unit. Prompt used to ask user
-    to pick a unit. While unit is not one of the options and is not 'Q', error
-    message is printed and user is asked to try again until input is a valid
-    option.
+    to pick a unit. If there's no chosen unit, while unit is not one of the options 
+    and is not 'Q', error message is printed and user is asked to try again until 
+    input is a valid option. If there is a chosen unit, while unit is not one of the
+    options, error message is printed and user is asked to try again until input is a 
+    valid option.
 
     Args:
         options (str): Possible input options for the user
@@ -68,7 +70,8 @@ def print_units(units, units_title):
         print(f"{i+1}: {units[i]}")
 
 def print_conversion(before_num, before_symbol, after_num, after_symbol):
-    '''Prints measurement conversion.
+    '''Prints measurement conversion based on if after_num is a floating
+    point number.
 
     Args:
         before_num (float): The amount of the old unit before conversion
