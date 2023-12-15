@@ -5,7 +5,7 @@ inputs, printing units and conversions, and processing measurement conversions.
 def valid_unit(options, chosen_unit=None):
     '''Chooses prompt based on if there's a chosen unit. Prompt used to ask user
     to pick a unit. If there's no chosen unit, while unit is not one of the options 
-    and is not 'Q', error message is printed and user is asked to try again until 
+    and is not 'Q' or 'q', error message is printed and user is asked to try again until 
     input is a valid option. If there is a chosen unit, while unit is not one of the
     options, error message is printed and user is asked to try again until input is a 
     valid option.
@@ -22,14 +22,14 @@ def valid_unit(options, chosen_unit=None):
     if chosen_unit == None:
         prompt = "Select a unit to convert to, or type 'Q' to go back: "
         unit = input(prompt)
-        while unit not in options and unit not in 'Qq':
+        while unit not in options and unit not in ['Q', 'q']:
             print("Invalid. Try again")
             unit = input(prompt)
     else:
         prompt = f"Which unit are you converting to {chosen_unit}? "
         unit = input(prompt)
         while unit not in options:
-            if unit in 'Qq':
+            if unit in ['Q', 'q']:
                 print("You cannot quit now. Try again")
             else:
                 print("Invalid. Try again")
@@ -70,8 +70,8 @@ def print_units(units, units_title):
         print(f"{i+1}: {units[i]}")
 
 def print_conversion(before_num, before_symbol, after_num, after_symbol):
-    '''Prints measurement conversion based on if after_num is a floating
-    point number.
+    '''Prints measurement conversion based on if before_num and/or after_num 
+    are a floating point numbers.
 
     Args:
         before_num (float): The amount of the old unit before conversion
@@ -79,7 +79,11 @@ def print_conversion(before_num, before_symbol, after_num, after_symbol):
         after_num (float): The amount of the new unit after conversion
         after_symbol (str): The symbol of the new unit
     '''
-    if after_num % 1 == 0:
+    if before_num % 1 == 0 and after_num % 1 == 0:
+        print(f"\n{before_num:.0f}{before_symbol} = {after_num:.0f}{after_symbol}")
+    elif before_num % 1 == 0 and after_num % 1 != 0:
+        print(f"\n{before_num:.0f}{before_symbol} = {after_num:.3f}{after_symbol}")
+    elif before_num % 1 != 0 and after_num % 1 == 0:
         print(f"\n{before_num}{before_symbol} = {after_num:.0f}{after_symbol}")
     else:
         print(f"\n{before_num}{before_symbol} = {after_num:.3f}{after_symbol}")
