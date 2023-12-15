@@ -25,7 +25,7 @@ from measurement_units import *
 
 window = Tk()
 window.title('Measurement Converter')
-window.geometry('340x90')
+window.geometry('395x90')
 
 # Temperature Menus ============================================================
 
@@ -900,7 +900,90 @@ class Area():
         del units[self.acre]
         unit_after(self.acre)
         for key, value in units.items():
-            after.menu.add_command(label=key, command=value[1])    
+            after.menu.add_command(label=key, command=value[1])
+
+# Area Menus ===================================================================
+
+class Pressure():
+    def __init__(self):
+        self.pascal, self.psi, self.bar = Pascals(), PoundsPerSquareInch(), Bars()
+        self.atm, self.torr = StandardAtmospheres(), Torrs()
+        self.units = {self.pascal: (self.pascal_b, self.pascal_a), self.psi: (self.psi_b, self.psi_a),
+                      self.bar: (self.bar_b, self.bar_a), self.atm: (self.atm_b, self.atm_a),
+                      self.torr: (self.torr_b, self.torr_a)}
+        current_measurement('Pressure')
+        self.pascal_b()
+        self.psi_a()
+    
+    def pascal_b(self):
+        units = self.units.copy()
+        del units[self.pascal]
+        unit_before(self.pascal)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def psi_b(self):
+        units = self.units.copy()
+        del units[self.psi]
+        unit_before(self.psi)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def bar_b(self):
+        units = self.units.copy()
+        del units[self.bar]
+        unit_before(self.bar)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def atm_b(self):
+        units = self.units.copy()
+        del units[self.atm]
+        unit_before(self.atm)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def torr_b(self):
+        units = self.units.copy()
+        del units[self.torr]
+        unit_before(self.torr)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def pascal_a(self):
+        units = self.units.copy()
+        del units[self.pascal]
+        unit_after(self.pascal)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def psi_a(self):
+        units = self.units.copy()
+        del units[self.psi]
+        unit_after(self.psi)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def bar_a(self):
+        units = self.units.copy()
+        del units[self.bar]
+        unit_after(self.bar)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def atm_a(self):
+        units = self.units.copy()
+        del units[self.atm]
+        unit_after(self.atm)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def torr_a(self):
+        units = self.units.copy()
+        del units[self.torr]
+        unit_after(self.torr)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
 
 def unit_before(unit):
     '''Assigns a unit to be the before unit and changes the menu button of the
@@ -967,7 +1050,7 @@ def equals_button():
 
 # Creates dropdown menu displaying each type of measurement
 measure_types = {'Temperature': Temperature, 'Length': Length, 'Mass': Mass, 'Time': Time, 
-                 'Speed': Speed, 'Angle': Angle, 'Area': Area}
+                 'Speed': Speed, 'Angle': Angle, 'Area': Area, 'Pressure': Pressure}
 measurements = Menubutton(window, text='Temperature', font=(0))
 measurements.menu = Menu(measurements, font=(0), tearoff=0)
 measurements['menu'] = measurements.menu
@@ -976,7 +1059,7 @@ for key, value in measure_types.items():
 measurements.grid(column=0, row=0)
 
 # Creates textbox for user input, result label for displaying the output and equals button
-textbox = Entry(window, width=17, font=(0))
+textbox = Entry(window, width=20, font=(0))
 result = Label(window, text='-', font=(0))
 equals = Button(window, text=' = ', font=(0), command=equals_button)
 textbox.grid(column=0, row=1)

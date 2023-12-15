@@ -120,3 +120,17 @@ def area():
         print_units(units, title)
         new_unit = valid_unit(options)
     print()
+
+def pressure():
+    units = [Pascals(), PoundsPerSquareInch(), Bars(), StandardAtmospheres(), Torrs()]
+    options = ['1', '2', '3', '4', '5']
+    title = 'Pressure'
+    print_units(units, title)
+    new_unit = valid_unit(options)
+    while new_unit not in 'Qq':
+        process_conversion(units, options, title, new_unit)
+
+        units = [Pascals(), PoundsPerSquareInch(), Bars(), StandardAtmospheres(), Torrs()]
+        print_units(units, title)
+        new_unit = valid_unit(options)
+    print()

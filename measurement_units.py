@@ -1535,3 +1535,100 @@ class Acres():
         else:
             new_area = old_area * 2.471
         return new_area
+
+# Pressure Units ===================================================================
+    
+class Pascals():
+    def __init__(self):
+        self.name = 'pascals'
+        self.symbol = 'Pa'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_pressure):
+        if old_unit.name == 'pounds per square inch':
+            new_pressure = old_pressure * 6895
+        elif old_unit.name == 'bars':
+            new_pressure = old_pressure * 100000
+        elif old_unit.name == 'standard atmospheres':
+            new_pressure = old_pressure * 101300
+        else:
+            new_pressure = old_pressure * 133.3
+        return new_pressure
+
+class PoundsPerSquareInch():
+    def __init__(self):
+        self.name = 'pounds per square inch'
+        self.symbol = 'psi'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_pressure):
+        if old_unit.name == 'pascals':
+            new_pressure = old_pressure / 6895
+        elif old_unit.name == 'bars':
+            new_pressure = old_pressure * 14.504
+        elif old_unit.name == 'standard atmospheres':
+            new_pressure = old_pressure * 14.696
+        else:
+            new_pressure = old_pressure / 51.715
+        return new_pressure
+
+class Bars():
+    def __init__(self):
+        self.name = 'bars'
+        self.symbol = ' bar'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_pressure):
+        if old_unit.name == 'pascals':
+            new_pressure = old_pressure / 100000
+        elif old_unit.name == 'pounds per square inch':
+            new_pressure = old_pressure / 14.504
+        elif old_unit.name == 'standard atmospheres':
+            new_pressure = old_pressure * 1.013
+        else:
+            new_pressure = old_pressure / 750.1
+        return new_pressure
+
+class StandardAtmospheres():
+    def __init__(self):
+        self.name = 'standard atmospheres'
+        self.symbol = 'atm'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_pressure):
+        if old_unit.name == 'pascals':
+            new_pressure = old_pressure / 101300
+        elif old_unit.name == 'pounds per square inch':
+            new_pressure = old_pressure / 14.696
+        elif old_unit.name == 'bars':
+            new_pressure = old_pressure / 1.013
+        else:
+            new_pressure = old_pressure / 760
+        return new_pressure
+
+class Torrs():
+    def __init__(self):
+        self.name = 'torrs'
+        self.symbol = ' Torr'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_pressure):
+        if old_unit.name == 'pascals':
+            new_pressure = old_pressure / 133.3
+        elif old_unit.name == 'pounds per square inch':
+            new_pressure = old_pressure * 51.715
+        elif old_unit.name == 'bars':
+            new_pressure = old_pressure * 750.1
+        else:
+            new_pressure = old_pressure * 760
+        return new_pressure
