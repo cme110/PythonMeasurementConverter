@@ -21,6 +21,7 @@ All classes have these methods:
 '''
 
 from tkinter import *
+from typing import Any
 from measurement_units import *
 
 window = Tk()
@@ -985,6 +986,73 @@ class Pressure():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
+# Frequency Menus ===================================================================
+
+class Frequency():
+    def __init__(self):
+        self.hertz, self.kilo, self.mega, self.giga = Hertz(), Kilohertz(), Megahertz(), Gigahertz()
+        self.units = {self.hertz: (self.hertz_b, self.hertz_a), self.kilo: (self.kilo_b, self.kilo_a),
+                      self.mega: (self.mega_b, self.mega_a), self.giga: (self.giga_b, self.giga_a)}
+        current_measurement('Frequency')
+        self.kilo_b()
+        self.hertz_a()
+    
+    def hertz_b(self):
+        units = self.units.copy()
+        del units[self.hertz]
+        unit_before(self.hertz)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def kilo_b(self):
+        units = self.units.copy()
+        del units[self.kilo]
+        unit_before(self.kilo)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def mega_b(self):
+        units = self.units.copy()
+        del units[self.mega]
+        unit_before(self.mega)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def giga_b(self):
+        units = self.units.copy()
+        del units[self.giga]
+        unit_before(self.giga)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def hertz_a(self):
+        units = self.units.copy()
+        del units[self.hertz]
+        unit_after(self.hertz)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def kilo_a(self):
+        units = self.units.copy()
+        del units[self.kilo]
+        unit_after(self.kilo)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def mega_a(self):
+        units = self.units.copy()
+        del units[self.mega]
+        unit_after(self.mega)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def giga_a(self):
+        units = self.units.copy()
+        del units[self.giga]
+        unit_after(self.giga)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
 def unit_before(unit):
     '''Assigns a unit to be the before unit and changes the menu button of the
     before menu.
@@ -1050,7 +1118,8 @@ def equals_button():
 
 # Creates dropdown menu displaying each type of measurement
 measure_types = {'Temperature': Temperature, 'Length': Length, 'Mass': Mass, 'Time': Time, 
-                 'Speed': Speed, 'Angle': Angle, 'Area': Area, 'Pressure': Pressure}
+                 'Speed': Speed, 'Angle': Angle, 'Area': Area, 'Pressure': Pressure,
+                 'Frequency': Frequency}
 measurements = Menubutton(window, text='Temperature', font=(0))
 measurements.menu = Menu(measurements, font=(0), tearoff=0)
 measurements['menu'] = measurements.menu

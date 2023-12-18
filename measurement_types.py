@@ -134,3 +134,17 @@ def pressure():
         print_units(units, title)
         new_unit = valid_unit(options)
     print()
+
+def frequency():
+    units = [Hertz(), Kilohertz(), Megahertz(), Gigahertz()]
+    options = ['1', '2', '3', '4']
+    title = 'Frequency'
+    print_units(units, title)
+    new_unit = valid_unit(options)
+    while new_unit not in 'Qq':
+        process_conversion(units, options, title, new_unit)
+
+        units = [Hertz(), Kilohertz(), Megahertz(), Gigahertz()]
+        print_units(units, title)
+        new_unit = valid_unit(options)
+    print()
