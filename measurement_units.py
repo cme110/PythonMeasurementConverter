@@ -1632,3 +1632,73 @@ class Torrs():
         else:
             new_pressure = old_pressure * 760
         return new_pressure
+    
+# Frequency Units ===================================================================
+
+class Hertz():
+    def __init__(self):
+        self.name = 'hertz'
+        self.symbol = 'Hz'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_freq):
+        if old_unit.name == 'kilohertz':
+            new_freq = old_freq * 1000
+        elif old_unit.name == 'megahertz':
+            new_freq = old_freq * 1e6
+        else:
+            new_freq = old_freq * 1e9
+        return new_freq
+
+class Kilohertz():
+    def __init__(self):
+        self.name = 'kilohertz'
+        self.symbol = 'kHz'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_freq):
+        if old_unit.name == 'hertz':
+            new_freq = old_freq / 1000
+        elif old_unit.name == 'megahertz':
+            new_freq = old_freq * 1000
+        else:
+            new_freq = old_freq * 1e6
+        return new_freq
+
+class Megahertz():
+    def __init__(self):
+        self.name = 'megahertz'
+        self.symbol = 'MHz'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_freq):
+        if old_unit.name == 'hertz':
+            new_freq = old_freq / 1e6
+        elif old_unit.name == 'kilohertz':
+            new_freq = old_freq / 1000
+        else:
+            new_freq = old_freq * 1000
+        return new_freq
+
+class Gigahertz():
+    def __init__(self):
+        self.name = 'gigahertz'
+        self.symbol = 'GHz'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_freq):
+        if old_unit.name == 'hertz':
+            new_freq = old_freq / 1e9
+        elif old_unit.name == 'kilohertz':
+            new_freq = old_freq / 1e6
+        else:
+            new_freq = old_freq / 1000
+        return new_freq
