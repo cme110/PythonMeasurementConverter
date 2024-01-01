@@ -121,6 +121,22 @@ def area():
         new_unit = valid_unit(options)
     print()
 
+def digital_storage():
+    units = [Bits(), Bytes(), Kilobytes(), Megabytes(), Gigabytes(), Terabytes(),
+             Petabytes(), Kibibytes(), Mebibytes(), Gibibytes(), Tebibytes(), Pebibytes()]
+    options = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+    title = 'Digital Storage'
+    print_units(units, title)
+    new_unit = valid_unit(options)
+    while new_unit not in 'Qq':
+        process_conversion(units, options, title, new_unit)
+
+        units = [Bits(), Bytes(), Kilobytes(), Megabytes(), Gigabytes(), Terabytes(),
+                Petabytes(), Kibibytes(), Mebibytes(), Gibibytes(), Tebibytes(), Pebibytes()]
+        print_units(units, title)
+        new_unit = valid_unit(options)
+    print()
+
 def pressure():
     units = [Pascals(), PoundsPerSquareInch(), Bars(), StandardAtmospheres(), Torrs()]
     options = ['1', '2', '3', '4', '5']

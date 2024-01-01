@@ -15,16 +15,16 @@ All classes have three methods:
         Returns:
             String of capitalised name attribute
         
-    conversion(old_unit, old_temp):
+    conversion(old_unit, old_{measurement}):
         Chooses the conversion calculation based on the name attribute of
         the old measurement unit, then does the calculation. 
         
         Args:
             old_unit (class): Represents the old measurement unit
-            old_temp (int): Represents the amount of the old measurement unit
+            old_{measurement} (int): Represents the amount of the old measurement unit
 
         Returns:
-            new_temp (float): The result of the conversion calculation
+            new_{measurement} (float): The result of the conversion calculation
 '''
 
 import math
@@ -1535,6 +1535,404 @@ class Acres():
         else:
             new_area = old_area * 2.471
         return new_area
+
+# Digital Storage ===================================================================
+
+class Bits():
+    def __init__(self):
+        self.name = 'bits'
+        self.symbol = 'b'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bytes':
+            new_digi = old_digi * 8
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi * 8000
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi * 8e6
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi * 8e9
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi * 8e12
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi * 8e15
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi * 8192
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi * 8.389e6
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi * 8.59e9
+        elif old_unit.name == 'tebibytes':
+            new_digi = old_digi * 8.796e12
+        else:
+            new_digi = old_digi * 9.007e15
+        return new_digi
+
+class Bytes():
+    def __init__(self):
+        self.name = 'bytes'
+        self.symbol = 'B'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 8
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi * 1000
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi * 1e6
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi * 1e9
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi * 1e12
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi * 1e15
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi * 1024
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi * 1.049e6
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi * 1.074e9
+        elif old_unit.name == 'tebibytes':
+            new_digi = old_digi * 1.1e12
+        else:
+            new_digi = old_digi * 1.126e15
+        return new_digi
+
+class Kilobytes():
+    def __init__(self):
+        self.name = 'kilobytes'
+        self.symbol = 'KB'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 8000
+        elif old_unit.name == 'bytes':
+            new_digi = old_digi / 1000
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi * 1000
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi * 1e6
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi * 1e9
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi * 1e12
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi * 1.024
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi * 1048.58
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi * 1.074e6
+        elif old_unit.name == 'tebibytes':
+            new_digi = old_digi * 1.1e9
+        else:
+            new_digi = old_digi * 1.126e12
+        return new_digi
+
+class Megabytes():
+    def __init__(self):
+        self.name = 'megabytes'
+        self.symbol = 'MB'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 8e6
+        elif old_unit.name == 'bytes':
+            new_digi = old_digi / 1e6
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi / 1000
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi * 1000
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi * 1e6
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi * 1e9
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi / 976.6
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi * 1.049
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi * 1074
+        elif old_unit.name == 'tebibytes':
+            new_digi = old_digi * 1.1e6
+        else:
+            new_digi = old_digi * 1.126e9
+        return new_digi
+
+class Gigabytes():
+    def __init__(self):
+        self.name = 'gigabytes'
+        self.symbol = 'GB'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 8e9
+        elif old_unit.name == 'bytes':
+            new_digi = old_digi / 1e9
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi / 1e6
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi / 1000
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi * 1000
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi * 1e6
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi / 976600
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi / 953.7
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi * 1.074
+        elif old_unit.name == 'tebibytes':
+            new_digi = old_digi * 1100
+        else:
+            new_digi = old_digi * 1.126e6
+        return new_digi
+
+class Terabytes():
+    def __init__(self):
+        self.name = 'terabytes'
+        self.symbol = 'TB'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 8e12
+        elif old_unit.name == 'bytes':
+            new_digi = old_digi / 1e12
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi / 1e9
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi / 1e6
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi / 1000
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi * 1000
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi / 9.766e8
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi / 953700
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi / 931.3
+        elif old_unit.name == 'tebibytes':
+            new_digi = old_digi * 1.1
+        else:
+            new_digi = old_digi * 1126
+        return new_digi
+
+class Petabytes():
+    def __init__(self):
+        self.name = 'petabytes'
+        self.symbol = 'PB'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 8e15
+        elif old_unit.name == 'bytes':
+            new_digi = old_digi / 1e15
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi / 1e12
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi / 1e9
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi / 1e6
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi / 1000
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi / 9.766e11
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi / 9.537e8
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi / 931300
+        elif old_unit.name == 'tebibytes':
+            new_digi = old_digi / 909.5
+        else:
+            new_digi = old_digi * 1.126
+        return new_digi
+
+class Kibibytes():
+    def __init__(self):
+        self.name = 'kibibytes'
+        self.symbol = 'KiB'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 8192
+        elif old_unit.name == 'bytes':
+            new_digi = old_digi / 1024
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi / 1.024
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi * 976.6
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi * 976600
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi * 9.766e8
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi * 9.766e11
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi * 1024
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi * 1.049e6
+        elif old_unit.name == 'tebibytes':
+            new_digi = old_digi * 1.074e9
+        else:
+            new_digi = old_digi * 1.1e12
+        return new_digi
+
+class Mebibytes():
+    def __init__(self):
+        self.name = 'mebibytes'
+        self.symbol = 'MiB'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 8.389e6
+        elif old_unit.name == 'bytes':
+            new_digi = old_digi / 1.049e6
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi / 1049
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi / 1.049
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi * 953.7
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi * 953700
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi * 9.537e8
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi / 1024
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi * 1024
+        elif old_unit.name == 'tebibytes':
+            new_digi = old_digi * 1.049e6
+        else:
+            new_digi = old_digi * 1.074e9
+        return new_digi
+
+class Gibibytes():
+    def __init__(self):
+        self.name = 'gibibytes'
+        self.symbol = 'GiB'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 8.59e9
+        elif old_unit.name == 'bytes':
+            new_digi = old_digi / 1.074e9
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi / 1.074e6
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi / 1074
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi / 1.074
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi * 931.3
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi * 931300
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi / 1.049e6
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi / 1024
+        elif old_unit.name == 'tebibytes':
+            new_digi = old_digi * 1024
+        else:
+            new_digi = old_digi * 1.049e6
+        return new_digi
+
+class Tebibytes():
+    def __init__(self):
+        self.name = 'tebibytes'
+        self.symbol = 'TiB'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 8.796e12
+        elif old_unit.name == 'bytes':
+            new_digi = old_digi / 1.1e12
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi / 1.1e9
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi / 1.1e6
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi / 1100
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi / 1.1
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi * 909.5
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi / 1.074e9
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi / 1.049e6
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi / 1024
+        else:
+            new_digi = old_digi * 1024
+        return new_digi
+
+class Pebibytes():
+    def __init__(self):
+        self.name = 'pebibytes'
+        self.symbol = 'PiB'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_digi):
+        if old_unit.name == 'bits':
+            new_digi = old_digi / 9.007e15
+        elif old_unit.name == 'bytes':
+            new_digi = old_digi / 1.126e15
+        elif old_unit.name == 'kilobytes':
+            new_digi = old_digi / 1.126e12
+        elif old_unit.name == 'megabytes':
+            new_digi = old_digi / 1.126e9
+        elif old_unit.name == 'gigabytes':
+            new_digi = old_digi / 1.126e6
+        elif old_unit.name == 'terabytes':
+            new_digi = old_digi / 1126
+        elif old_unit.name == 'petabytes':
+            new_digi = old_digi / 1.126
+        elif old_unit.name == 'kibibytes':
+            new_digi = old_digi / 1.1e12
+        elif old_unit.name == 'mebibytes':
+            new_digi = old_digi / 1.074e9
+        elif old_unit.name == 'gibibytes':
+            new_digi = old_digi / 1.049e6
+        else:
+            new_digi = old_digi / 1024
+        return new_digi
 
 # Pressure Units ===================================================================
     

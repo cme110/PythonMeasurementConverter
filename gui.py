@@ -903,6 +903,192 @@ class Area():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
+# Digital Storage Menus ===================================================================
+
+class Digital_Storage():
+    def __init__(self):
+        self.bit, self.byte, self.kilo = Bits(), Bytes(), Kilobytes()
+        self.mega, self.giga, self.tera = Megabytes(), Gigabytes(), Terabytes()
+        self.peta, self.kibi, self.mebi = Petabytes(), Kibibytes(), Mebibytes()
+        self.gibi, self.tebi, self.pebi = Gibibytes(), Tebibytes(), Pebibytes()
+        self.units = {self.bit: (self.bit_b, self.bit_a), self.byte: (self.byte_b, self.byte_a),
+                      self.kilo: (self.kilo_b, self.kilo_a), self.mega: (self.mega_b, self.mega_a),
+                      self.giga: (self.giga_b, self.giga_a), self.tera: (self.tera_b, self.tera_a),
+                      self.peta: (self.peta_b, self.peta_a), self.kibi: (self.kibi_b, self.kibi_a),
+                      self.mebi: (self.mebi_b, self.mebi_a), self.gibi: (self.gibi_b, self.gibi_a),
+                      self.tebi: (self.tebi_b, self.tebi_a), self.pebi: (self.pebi_b, self.pebi_a)}
+        current_measurement('Digital Storage')
+        self.kilo_b()
+        self.byte_a()
+    
+    def bit_b(self):
+        units = self.units.copy()
+        del units[self.bit]
+        unit_before(self.bit)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def byte_b(self):
+        units = self.units.copy()
+        del units[self.byte]
+        unit_before(self.byte)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def kilo_b(self):
+        units = self.units.copy()
+        del units[self.kilo]
+        unit_before(self.kilo)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def mega_b(self):
+        units = self.units.copy()
+        del units[self.mega]
+        unit_before(self.mega)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def giga_b(self):
+        units = self.units.copy()
+        del units[self.giga]
+        unit_before(self.giga)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def tera_b(self):
+        units = self.units.copy()
+        del units[self.tera]
+        unit_before(self.tera)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def peta_b(self):
+        units = self.units.copy()
+        del units[self.peta]
+        unit_before(self.peta)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def kibi_b(self):
+        units = self.units.copy()
+        del units[self.kibi]
+        unit_before(self.kibi)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def mebi_b(self):
+        units = self.units.copy()
+        del units[self.mebi]
+        unit_before(self.mebi)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def gibi_b(self):
+        units = self.units.copy()
+        del units[self.gibi]
+        unit_before(self.gibi)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def tebi_b(self):
+        units = self.units.copy()
+        del units[self.tebi]
+        unit_before(self.tebi)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def pebi_b(self):
+        units = self.units.copy()
+        del units[self.pebi]
+        unit_before(self.pebi)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def bit_a(self):
+        units = self.units.copy()
+        del units[self.bit]
+        unit_after(self.bit)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def byte_a(self):
+        units = self.units.copy()
+        del units[self.byte]
+        unit_after(self.byte)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def kilo_a(self):
+        units = self.units.copy()
+        del units[self.kilo]
+        unit_after(self.kilo)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def mega_a(self):
+        units = self.units.copy()
+        del units[self.mega]
+        unit_after(self.mega)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def giga_a(self):
+        units = self.units.copy()
+        del units[self.giga]
+        unit_after(self.giga)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def tera_a(self):
+        units = self.units.copy()
+        del units[self.tera]
+        unit_after(self.tera)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def peta_a(self):
+        units = self.units.copy()
+        del units[self.peta]
+        unit_after(self.peta)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def kibi_a(self):
+        units = self.units.copy()
+        del units[self.kibi]
+        unit_after(self.kibi)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def mebi_a(self):
+        units = self.units.copy()
+        del units[self.mebi]
+        unit_after(self.mebi)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def gibi_a(self):
+        units = self.units.copy()
+        del units[self.gibi]
+        unit_after(self.gibi)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+        
+    def tebi_a(self):
+        units = self.units.copy()
+        del units[self.tebi]
+        unit_after(self.tebi)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def pebi_a(self):
+        units = self.units.copy()
+        del units[self.pebi]
+        unit_after(self.pebi)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
 # Area Menus ===================================================================
 
 class Pressure():
@@ -1118,8 +1304,8 @@ def equals_button():
 
 # Creates dropdown menu displaying each type of measurement
 measure_types = {'Temperature': Temperature, 'Length': Length, 'Mass': Mass, 'Time': Time, 
-                 'Speed': Speed, 'Angle': Angle, 'Area': Area, 'Pressure': Pressure,
-                 'Frequency': Frequency}
+                 'Speed': Speed, 'Angle': Angle, 'Area': Area, 'Digital Storage': Digital_Storage,
+                 'Pressure': Pressure, 'Frequency': Frequency}
 measurements = Menubutton(window, text='Temperature', font=(0))
 measurements.menu = Menu(measurements, font=(0), tearoff=0)
 measurements['menu'] = measurements.menu
