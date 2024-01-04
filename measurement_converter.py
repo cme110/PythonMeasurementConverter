@@ -13,10 +13,11 @@ MEASURE_TYPES = """Types of measurements:
 6: Angle
 7: Area
 8: Digital Storage
-9: Pressure
-10: Frequency"""
+9: Energy
+10: Pressure
+11: Frequency"""
 
-OPTIONS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Q', 'q']
+OPTIONS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', 'Q', 'q']
     
 def valid_measurement():
     '''Asks user to input a number for the corresponding measurement or 'Q'
@@ -60,8 +61,10 @@ def main():
         elif measurement == '8':
             digital_storage()
         elif measurement == '9':
-            pressure()
+            energy()
         elif measurement == '10':
+            pressure()
+        elif measurement == '11':
             frequency()
         print(MEASURE_TYPES)
         measurement = valid_measurement()

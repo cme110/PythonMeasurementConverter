@@ -1933,6 +1933,298 @@ class Pebibytes():
         else:
             new_digi = old_digi / 1024
         return new_digi
+    
+# Energy Units ===================================================================
+
+class Joules():
+    def __init__(self):
+        self.name = 'joules'
+        self.symbol = 'J'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_energy):
+        if old_unit.name == 'kilojoules':
+            new_energy = old_energy * 1000
+        elif old_unit.name == 'calories':
+            new_energy = old_energy * 4.184
+        elif old_unit.name == 'kilocalories':
+            new_energy = old_energy * 4184
+        elif old_unit.name == 'watt hours':
+            new_energy = old_energy * 3600
+        elif old_unit.name == 'kilowatt hours':
+            new_energy = old_energy * 3.6e6
+        elif old_unit.name == 'electronvolts':
+            new_energy = old_energy / 6.242e18
+        elif old_unit.name == 'British thermal units':
+            new_energy = old_energy * 1055
+        elif old_unit.name == 'US therms':
+            new_energy = old_energy * 1.055e8
+        else:
+            new_energy = old_energy * 1.356
+        return new_energy
+
+class Kilojoules():
+    def __init__(self):
+        self.name = 'kilojoules'
+        self.symbol = 'kJ'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_energy):
+        if old_unit.name == 'joules':
+            new_energy = old_energy / 1000
+        elif old_unit.name == 'calories':
+            new_energy = old_energy / 239
+        elif old_unit.name == 'kilocalories':
+            new_energy = old_energy * 4.184
+        elif old_unit.name == 'watt hours':
+            new_energy = old_energy * 3.6
+        elif old_unit.name == 'kilowatt hours':
+            new_energy = old_energy * 3600
+        elif old_unit.name == 'electronvolts':
+            new_energy = old_energy / 6.242e21
+        elif old_unit.name == 'British thermal units':
+            new_energy = old_energy * 1.055
+        elif old_unit.name == 'US therms':
+            new_energy = old_energy * 105500
+        else:
+            new_energy = old_energy / 737.6
+        return new_energy
+
+class Calories():
+    def __init__(self):
+        self.name = 'calories'
+        self.symbol = 'cal'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_energy):
+        if old_unit.name == 'joules':
+            new_energy = old_energy / 4.184
+        elif old_unit.name == 'kilojoules':
+            new_energy = old_energy * 239
+        elif old_unit.name == 'kilocalories':
+            new_energy = old_energy * 1000
+        elif old_unit.name == 'watt hours':
+            new_energy = old_energy * 860.4
+        elif old_unit.name == 'kilowatt hours':
+            new_energy = old_energy * 860400
+        elif old_unit.name == 'electronvolts':
+            new_energy = old_energy / 2.611e19
+        elif old_unit.name == 'British thermal units':
+            new_energy = old_energy * 252.2
+        elif old_unit.name == 'US therms':
+            new_energy = old_energy * 2.521e7
+        else:
+            new_energy = old_energy / 3.086
+        return new_energy
+
+class Kilocalories():
+    def __init__(self):
+        self.name = 'kilocalories'
+        self.symbol = 'kcal'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_energy):
+        if old_unit.name == 'joules':
+            new_energy = old_energy / 4184
+        elif old_unit.name == 'kilojoules':
+            new_energy = old_energy / 4.184
+        elif old_unit.name == 'calories':
+            new_energy = old_energy / 1000
+        elif old_unit.name == 'watt hours':
+            new_energy = old_energy / 1.162
+        elif old_unit.name == 'kilowatt hours':
+            new_energy = old_energy * 860.4
+        elif old_unit.name == 'electronvolts':
+            new_energy = old_energy / 2.611e22
+        elif old_unit.name == 'British thermal units':
+            new_energy = old_energy / 3.966
+        elif old_unit.name == 'US therms':
+            new_energy = old_energy * 25210
+        else:
+            new_energy = old_energy / 3086
+        return new_energy
+
+class WattHours():
+    def __init__(self):
+        self.name = 'watt hours'
+        self.symbol = 'Wh'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_energy):
+        if old_unit.name == 'joules':
+            new_energy = old_energy / 3600
+        elif old_unit.name == 'kilojoules':
+            new_energy = old_energy / 3.6
+        elif old_unit.name == 'calories':
+            new_energy = old_energy / 860.4
+        elif old_unit.name == 'kilocalories':
+            new_energy = old_energy * 1.162
+        elif old_unit.name == 'kilowatt hours':
+            new_energy = old_energy * 1000
+        elif old_unit.name == 'electronvolts':
+            new_energy = old_energy / 2.247e22
+        elif old_unit.name == 'British thermal units':
+            new_energy = old_energy / 3.412
+        elif old_unit.name == 'US therms':
+            new_energy = old_energy * 29300
+        else:
+            new_energy = old_energy / 2655
+        return new_energy
+
+class KilowattHours():
+    def __init__(self):
+        self.name = 'kilowatt hours'
+        self.symbol = 'kWh'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_energy):
+        if old_unit.name == 'joules':
+            new_energy = old_energy / 3.6e6
+        elif old_unit.name == 'kilojoules':
+            new_energy = old_energy / 3600
+        elif old_unit.name == 'calories':
+            new_energy = old_energy / 860400
+        elif old_unit.name == 'kilocalories':
+            new_energy = old_energy / 860.4
+        elif old_unit.name == 'watt hours':
+            new_energy = old_energy / 1000
+        elif old_unit.name == 'electronvolts':
+            new_energy = old_energy / 2.247e25
+        elif old_unit.name == 'British thermal units':
+            new_energy = old_energy / 3412
+        elif old_unit.name == 'US therms':
+            new_energy = old_energy * 29.3
+        else:
+            new_energy = old_energy / 2.655e6
+        return new_energy
+
+class Electronvolts():
+    def __init__(self):
+        self.name = 'electronvolts'
+        self.symbol = 'eV'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_energy):
+        if old_unit.name == 'joules':
+            new_energy = old_energy * 6.242e18
+        elif old_unit.name == 'kilojoules':
+            new_energy = old_energy * 6.242e21
+        elif old_unit.name == 'calories':
+            new_energy = old_energy * 2.611e19
+        elif old_unit.name == 'kilocalories':
+            new_energy = old_energy * 2.611e22
+        elif old_unit.name == 'watt hours':
+            new_energy = old_energy * 2.247e22
+        elif old_unit.name == 'kilowatt hours':
+            new_energy = old_energy * 2.247e25
+        elif old_unit.name == 'British thermal units':
+            new_energy = old_energy * 6.585e21
+        elif old_unit.name == 'US therms':
+            new_energy = old_energy * 6.584e26
+        else:
+            new_energy = old_energy * 8.462e18
+        return new_energy
+
+class BritishThermalUnits():
+    def __init__(self):
+        self.name = 'British thermal units'
+        self.symbol = 'BTU'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_energy):
+        if old_unit.name == 'joules':
+            new_energy = old_energy / 1055
+        elif old_unit.name == 'kilojoules':
+            new_energy = old_energy / 1.055
+        elif old_unit.name == 'calories':
+            new_energy = old_energy / 252.2
+        elif old_unit.name == 'kilocalories':
+            new_energy = old_energy * 3.966
+        elif old_unit.name == 'watt hours':
+            new_energy = old_energy * 3.412
+        elif old_unit.name == 'kilowatt hours':
+            new_energy = old_energy * 3412
+        elif old_unit.name == 'electronvolts':
+            new_energy = old_energy / 6.585e21
+        elif old_unit.name == 'US therms':
+            new_energy = old_energy * 99980
+        else:
+            new_energy = old_energy / 778.2
+        return new_energy
+
+class USTherms():
+    def __init__(self):
+        self.name = 'US therms'
+        self.symbol = 'thm'
+    
+    def __repr__(self):
+        return self.name
+    
+    def conversion(self, old_unit, old_energy):
+        if old_unit.name == 'joules':
+            new_energy = old_energy / 1.055e8
+        elif old_unit.name == 'kilojoules':
+            new_energy = old_energy / 105500
+        elif old_unit.name == 'calories':
+            new_energy = old_energy / 2.521e7
+        elif old_unit.name == 'kilocalories':
+            new_energy = old_energy / 25210
+        elif old_unit.name == 'watt hours':
+            new_energy = old_energy / 29300
+        elif old_unit.name == 'kilowatt hours':
+            new_energy = old_energy / 29.3
+        elif old_unit.name == 'electronvolts':
+            new_energy = old_energy / 6.584e26
+        elif old_unit.name == 'British thermal units':
+            new_energy = old_energy / 99980
+        else:
+            new_energy = old_energy / 7.78e7
+        return new_energy
+
+class Footpounds():
+    def __init__(self):
+        self.name = 'foot-pounds'
+        self.symbol = 'ft-lb'
+    
+    def __repr__(self):
+        return self.name.capitalize()
+    
+    def conversion(self, old_unit, old_energy):
+        if old_unit.name == 'joules':
+            new_energy = old_energy / 1.356
+        elif old_unit.name == 'kilojoules':
+            new_energy = old_energy * 737.6
+        elif old_unit.name == 'calories':
+            new_energy = old_energy * 3.086
+        elif old_unit.name == 'kilocalories':
+            new_energy = old_energy * 3086
+        elif old_unit.name == 'watt hours':
+            new_energy = old_energy * 2655
+        elif old_unit.name == 'kilowatt hours':
+            new_energy = old_energy * 2.655e6
+        elif old_unit.name == 'electronvolts':
+            new_energy = old_energy / 8.462e18
+        elif old_unit.name == 'British thermal units':
+            new_energy = old_energy * 778.2
+        else:
+            new_energy = old_energy * 7.78e7
+        return new_energy
 
 # Pressure Units ===================================================================
     
