@@ -1089,7 +1089,163 @@ class Digital_Storage():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
-# Area Menus ===================================================================
+# Energy Menus ===================================================================
+
+class Energy():
+    def __init__(self):
+        self.joule, self.kiloj, self.calorie = Joules(), Kilojoules(), Calories()
+        self.kiloc, self.watt, self.kilow = Kilocalories(), WattHours(), KilowattHours()
+        self.elec, self.btu, self.us, self.foot = Electronvolts(), BritishThermalUnits(), USTherms(), Footpounds()
+        self.units = {self.joule: (self.joule_b, self.joule_a), self.kiloj: (self.kiloj_b, self.kiloj_a),
+                      self.calorie: (self.calorie_b, self.calorie_a), self.kiloc: (self.kiloc_b, self.kiloc_a),
+                      self.watt: (self.watt_b, self.watt_a), self.kilow: (self.kilow_b, self.kilow_a),
+                      self.elec: (self.elec_b, self.elec_a), self.btu: (self.btu_b, self.btu_a),
+                      self.us: (self.us_b, self.us_a), self.foot: (self.foot_b, self.foot_a)}
+        current_measurement('Energy')
+        self.calorie_b()
+        self.joule_a()
+    
+    def joule_b(self):
+        units = self.units.copy()
+        del units[self.joule]
+        unit_before(self.joule)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def kiloj_b(self):
+        units = self.units.copy()
+        del units[self.kiloj]
+        unit_before(self.kiloj)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def calorie_b(self):
+        units = self.units.copy()
+        del units[self.calorie]
+        unit_before(self.calorie)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def kiloc_b(self):
+        units = self.units.copy()
+        del units[self.kiloc]
+        unit_before(self.kiloc)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def watt_b(self):
+        units = self.units.copy()
+        del units[self.watt]
+        unit_before(self.watt)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def kilow_b(self):
+        units = self.units.copy()
+        del units[self.kilow]
+        unit_before(self.kilow)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def elec_b(self):
+        units = self.units.copy()
+        del units[self.elec]
+        unit_before(self.elec)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def btu_b(self):
+        units = self.units.copy()
+        del units[self.btu]
+        unit_before(self.btu)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def us_b(self):
+        units = self.units.copy()
+        del units[self.us]
+        unit_before(self.us)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def foot_b(self):
+        units = self.units.copy()
+        del units[self.foot]
+        unit_before(self.foot)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+    
+    def joule_a(self):
+        units = self.units.copy()
+        del units[self.joule]
+        unit_after(self.joule)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def kiloj_a(self):
+        units = self.units.copy()
+        del units[self.kiloj]
+        unit_after(self.kiloj)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def calorie_a(self):
+        units = self.units.copy()
+        del units[self.calorie]
+        unit_after(self.calorie)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def kiloc_a(self):
+        units = self.units.copy()
+        del units[self.kiloc]
+        unit_after(self.kiloc)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def watt_a(self):
+        units = self.units.copy()
+        del units[self.watt]
+        unit_after(self.watt)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def kilow_a(self):
+        units = self.units.copy()
+        del units[self.kilow]
+        unit_after(self.kilow)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def elec_a(self):
+        units = self.units.copy()
+        del units[self.elec]
+        unit_after(self.elec)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def btu_a(self):
+        units = self.units.copy()
+        del units[self.btu]
+        unit_after(self.btu)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def us_a(self):
+        units = self.units.copy()
+        del units[self.us]
+        unit_after(self.us)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+    
+    def foot_a(self):
+        units = self.units.copy()
+        del units[self.foot]
+        unit_after(self.foot)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+# Pressure Menus ===================================================================
 
 class Pressure():
     def __init__(self):
@@ -1305,7 +1461,7 @@ def equals_button():
 # Creates dropdown menu displaying each type of measurement
 measure_types = {'Temperature': Temperature, 'Length': Length, 'Mass': Mass, 'Time': Time, 
                  'Speed': Speed, 'Angle': Angle, 'Area': Area, 'Digital Storage': Digital_Storage,
-                 'Pressure': Pressure, 'Frequency': Frequency}
+                 'Energy': Energy, 'Pressure': Pressure, 'Frequency': Frequency}
 measurements = Menubutton(window, text='Temperature', font=(0))
 measurements.menu = Menu(measurements, font=(0), tearoff=0)
 measurements['menu'] = measurements.menu

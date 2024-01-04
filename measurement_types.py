@@ -137,6 +137,22 @@ def digital_storage():
         new_unit = valid_unit(options)
     print()
 
+def energy():
+    units = [Joules(), Kilojoules(), Calories(), Kilocalories(), WattHours(), KilowattHours(),
+             Electronvolts(), BritishThermalUnits(), USTherms(), Footpounds()]
+    options = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+    title = 'Energy'
+    print_units(units, title)
+    new_unit = valid_unit(options)
+    while new_unit not in 'Qq':
+        process_conversion(units, options, title, new_unit)
+
+        units = [Joules(), Kilojoules(), Calories(), Kilocalories(), WattHours(), KilowattHours(),
+                Electronvolts(), BritishThermalUnits(), USTherms(), Footpounds()]
+        print_units(units, title)
+        new_unit = valid_unit(options)
+    print()
+
 def pressure():
     units = [Pascals(), PoundsPerSquareInch(), Bars(), StandardAtmospheres(), Torrs()]
     options = ['1', '2', '3', '4', '5']
