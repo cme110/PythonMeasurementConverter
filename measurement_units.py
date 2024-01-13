@@ -29,7 +29,7 @@ All classes have three methods:
 
 import math
 
-# Temperature Units =============================================================
+# Temperature Units ============================================================
 
 class Celsius():
     def __init__(self):
@@ -1109,7 +1109,7 @@ class Centuries():
             new_time = old_time / 10
         return new_time
 
-# Speed Units ===================================================================
+# Speed Units ==================================================================
 
 class MetresPerSecond():
     def __init__(self):
@@ -1206,7 +1206,7 @@ class Knots():
             new_speed = old_speed / 1.151
         return new_speed
 
-# Angle Units ===================================================================
+# Angle Units ==================================================================
 
 class Degrees():
     def __init__(self):
@@ -1536,7 +1536,405 @@ class Acres():
             new_area = old_area * 2.471
         return new_area
 
-# Digital Storage ===================================================================
+# Volume Units =================================================================
+
+class CubicMetres():
+    def __init__(self):
+        self.name = 'cubic metres'
+        self.symbol = 'm³'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'litres':
+            new_volume = old_volume / 1000
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 1e6
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume / 35.315
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume / 61020
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume / 220
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume / 879.9
+        elif old_unit.name == 'pints':
+            new_volume = old_volume / 1760
+        elif old_unit.name == 'cups':
+            new_volume = old_volume / 3520
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume / 35200
+        elif old_unit.name == 'tablespoons':
+            new_volume = old_volume / 56310
+        else:
+            new_volume = old_volume / 168900
+        return new_volume
+
+class Litres():
+    def __init__(self):
+        self.name = 'litres'
+        self.symbol = 'L'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 1000
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 1000
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume * 28.317
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume / 61.024
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume * 4.546
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume * 1.137
+        elif old_unit.name == 'pints':
+            new_volume = old_volume / 1.76
+        elif old_unit.name == 'cups':
+            new_volume = old_volume / 3.52
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume / 35.195
+        elif old_unit.name == 'tablespoons':
+            new_volume = old_volume / 56.312
+        else:
+            new_volume = old_volume / 168.9
+        return new_volume
+
+class Millilitres():
+    def __init__(self):
+        self.name = 'millilitres'
+        self.symbol = 'mL'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 1e6
+        elif old_unit.name == 'litres':
+            new_volume = old_volume * 1000
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume * 28320
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume * 16.387
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume * 4546
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume * 1137
+        elif old_unit.name == 'pints':
+            new_volume = old_volume * 568.3
+        elif old_unit.name == 'cups':
+            new_volume = old_volume * 284.1
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume * 28.413
+        elif old_unit.name == 'tablespoons':
+            new_volume = old_volume * 17.758
+        else:
+            new_volume = old_volume * 5.919
+        return new_volume
+
+class CubicFeet():
+    def __init__(self):
+        self.name = 'cubic feet'
+        self.symbol = 'ft³'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 35.315
+        elif old_unit.name == 'litres':
+            new_volume = old_volume / 28.317
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 28320
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume / 1728
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume / 6.229
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume / 24.915
+        elif old_unit.name == 'pints':
+            new_volume = old_volume / 49.831
+        elif old_unit.name == 'cups':
+            new_volume = old_volume / 99.661
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume / 996.6
+        elif old_unit.name == 'tablespoons':
+            new_volume = old_volume / 1595
+        else:
+            new_volume = old_volume / 4784
+        return new_volume
+
+class CubicInches():
+    def __init__(self):
+        self.name = 'cubic inches'
+        self.symbol = 'in³'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 61020
+        elif old_unit.name == 'litres':
+            new_volume = old_volume * 61.024
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 16.387
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume * 1728
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume * 277.4
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume * 69.355
+        elif old_unit.name == 'pints':
+            new_volume = old_volume * 34.677
+        elif old_unit.name == 'cups':
+            new_volume = old_volume * 17.339
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume * 1.734
+        elif old_unit.name == 'tablespoons':
+            new_volume = old_volume * 1.084
+        else:
+            new_volume = old_volume / 2.768
+        return new_volume
+
+class Gallons():
+    def __init__(self):
+        self.name = 'gallons'
+        self.symbol = 'gal'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 220
+        elif old_unit.name == 'litres':
+            new_volume = old_volume / 4.546
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 4546
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume * 6.229
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume / 277.4
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume / 4
+        elif old_unit.name == 'pints':
+            new_volume = old_volume / 8
+        elif old_unit.name == 'cups':
+            new_volume = old_volume / 16
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume / 160
+        elif old_unit.name == 'tablespoons':
+            new_volume = old_volume / 256
+        else:
+            new_volume = old_volume / 768
+        return new_volume
+
+class Quarts():
+    def __init__(self):
+        self.name = 'quarts'
+        self.symbol = 'qt'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 879.9
+        elif old_unit.name == 'litres':
+            new_volume = old_volume / 1.136
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 1137
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume * 24.915
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume / 69.355
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume * 4
+        elif old_unit.name == 'pints':
+            new_volume = old_volume / 2
+        elif old_unit.name == 'cups':
+            new_volume = old_volume / 4
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume / 40
+        elif old_unit.name == 'tablespoons':
+            new_volume = old_volume / 64
+        else:
+            new_volume = old_volume / 192
+        return new_volume
+
+class Pints():
+    def __init__(self):
+        self.name = 'pints'
+        self.symbol = 'pt'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 1760
+        elif old_unit.name == 'litres':
+            new_volume = old_volume * 1.76
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 568.3
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume * 49.831
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume / 34.677
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume * 8
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume * 2
+        elif old_unit.name == 'cups':
+            new_volume = old_volume / 2
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume / 20
+        elif old_unit.name == 'tablespoons':
+            new_volume = old_volume / 32
+        else:
+            new_volume = old_volume / 96
+        return new_volume
+
+class Cups():
+    def __init__(self):
+        self.name = 'cups'
+        self.symbol = 'C'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 3520
+        elif old_unit.name == 'litres':
+            new_volume = old_volume * 3.52
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 284.1
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume * 99.661
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume / 17.339
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume * 16
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume * 4
+        elif old_unit.name == 'pints':
+            new_volume = old_volume * 2
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume / 10
+        elif old_unit.name == 'tablespoons':
+            new_volume = old_volume / 16
+        else:
+            new_volume = old_volume / 48
+        return new_volume
+
+class FluidOunces():
+    def __init__(self):
+        self.name = 'fluid ounces'
+        self.symbol = 'fl oz'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 35200
+        elif old_unit.name == 'litres':
+            new_volume = old_volume * 35.195
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 28.413
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume * 996.6
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume / 1.734
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume * 160
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume * 40
+        elif old_unit.name == 'pints':
+            new_volume = old_volume * 20
+        elif old_unit.name == 'cups':
+            new_volume = old_volume * 10
+        elif old_unit.name == 'tablespoons':
+            new_volume = old_volume / 1.6
+        else:
+            new_volume = old_volume / 4.8
+        return new_volume
+
+class Tablespoons():
+    def __init__(self):
+        self.name = 'tablespoons'
+        self.symbol = 'tbsp'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 56310
+        elif old_unit.name == 'litres':
+            new_volume = old_volume * 56.312
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 17.758
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume * 1595
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume / 1.084
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume * 256
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume * 64
+        elif old_unit.name == 'pints':
+            new_volume = old_volume * 32
+        elif old_unit.name == 'cups':
+            new_volume = old_volume * 16
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume * 1.6
+        else:
+            new_volume = old_volume / 3
+        return new_volume
+
+class Teaspoons():
+    def __init__(self):
+        self.name = 'teaspoons'
+        self.symbol = 'tsp'
+
+    def __repr__(self):
+        return self.name.capitalize()
+
+    def conversion(self, old_unit, old_volume):
+        if old_unit.name == 'cubic metres':
+            new_volume = old_volume * 168900
+        elif old_unit.name == 'litres':
+            new_volume = old_volume * 168.9
+        elif old_unit.name == 'millilitres':
+            new_volume = old_volume / 5.919
+        elif old_unit.name == 'cubic feet':
+            new_volume = old_volume * 4784
+        elif old_unit.name == 'cubic inches':
+            new_volume = old_volume * 2.768
+        elif old_unit.name == 'gallons':
+            new_volume = old_volume * 768
+        elif old_unit.name == 'quarts':
+            new_volume = old_volume * 192
+        elif old_unit.name == 'pints':
+            new_volume = old_volume * 96
+        elif old_unit.name == 'cups':
+            new_volume = old_volume * 48
+        elif old_unit.name == 'fluid ounces':
+            new_volume = old_volume * 4.8
+        else:
+            new_volume = old_volume * 3
+        return new_volume
+
+# Digital Storage ==============================================================
 
 class Bits():
     def __init__(self):
@@ -1934,7 +2332,7 @@ class Pebibytes():
             new_digi = old_digi / 1024
         return new_digi
     
-# Energy Units ===================================================================
+# Energy Units =================================================================
 
 class Joules():
     def __init__(self):
@@ -2226,7 +2624,7 @@ class Footpounds():
             new_energy = old_energy * 7.78e7
         return new_energy
 
-# Pressure Units ===================================================================
+# Pressure Units ===============================================================
     
 class Pascals():
     def __init__(self):
@@ -2323,7 +2721,7 @@ class Torrs():
             new_pressure = old_pressure * 760
         return new_pressure
     
-# Frequency Units ===================================================================
+# Frequency Units ==============================================================
 
 class Hertz():
     def __init__(self):
