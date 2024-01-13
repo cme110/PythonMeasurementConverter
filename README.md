@@ -1,2 +1,2 @@
 # Python Measurement Converter
-This measurement converter currently can convert between units of temperature, length, mass, time, speed, angle, area, digital storage, energy, pressure and frequency, and can be used in a Python terminal by running measurement_converter.py or in a GUI by running gui.py. I will add more types of measurements to the project in the future.
+This measurement converter currently can convert between units of temperature, length, mass, time, speed, angle, area, volume, digital storage, energy, pressure and frequency, and can be used in a Python terminal by running measurement_converter.py or in a GUI by running gui.py. I will add more types of measurements to the project in the future.

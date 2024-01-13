@@ -254,7 +254,7 @@ class Length():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
-# Mass Menus ==================================================================
+# Mass Menus ===================================================================
 
 class Mass():
     def __init__(self):
@@ -410,7 +410,7 @@ class Mass():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
-# Time Menus ==================================================================
+# Time Menus ===================================================================
 
 class Time():
     def __init__(self):
@@ -903,7 +903,193 @@ class Area():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
-# Digital Storage Menus ===================================================================
+# Volume Menus =================================================================
+
+class Volume():
+    def __init__(self):
+        self.cubm, self.litre, self.milli = CubicMetres(), Litres(), Millilitres()
+        self.cubft, self.cubin, self.gallon = CubicFeet(), CubicInches(), Gallons()
+        self.quart, self.pint, self.cup = Quarts(), Pints(), Cups()
+        self.floz, self.tbsp, self.tsp = FluidOunces(), Tablespoons(), Teaspoons()
+        self.units = {self.cubm: (self.cubm_b, self.cubm_a), self.litre: (self.litre_b, self.litre_a),
+                      self.milli: (self.milli_b, self.milli_a), self.cubft: (self.cubft_b, self.cubft_a),
+                      self.cubin: (self.cubin_b, self.cubin_a), self.gallon: (self.gallon_b, self.gallon_a),
+                      self.quart: (self.quart_b, self.quart_a), self.pint: (self.pint_b, self.pint_a),
+                      self.cup: (self.cup_b, self.cup_a), self.floz: (self.floz_b, self.floz_a),
+                      self.tbsp: (self.tbsp_b, self.tbsp_a), self.tsp: (self.tsp_b, self.tsp_a)}
+        current_measurement('Volume')
+        self.litre_b()
+        self.milli_a()
+
+    def cubm_b(self):
+        units = self.units.copy()
+        del units[self.cubm]
+        unit_before(self.cubm)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def litre_b(self):
+        units = self.units.copy()
+        del units[self.litre]
+        unit_before(self.litre)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def milli_b(self):
+        units = self.units.copy()
+        del units[self.milli]
+        unit_before(self.milli)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def cubft_b(self):
+        units = self.units.copy()
+        del units[self.cubft]
+        unit_before(self.cubft)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def cubin_b(self):
+        units = self.units.copy()
+        del units[self.cubin]
+        unit_before(self.cubin)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def gallon_b(self):
+        units = self.units.copy()
+        del units[self.gallon]
+        unit_before(self.gallon)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def quart_b(self):
+        units = self.units.copy()
+        del units[self.quart]
+        unit_before(self.quart)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def pint_b(self):
+        units = self.units.copy()
+        del units[self.pint]
+        unit_before(self.pint)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def cup_b(self):
+        units = self.units.copy()
+        del units[self.cup]
+        unit_before(self.cup)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def floz_b(self):
+        units = self.units.copy()
+        del units[self.floz]
+        unit_before(self.floz)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def tbsp_b(self):
+        units = self.units.copy()
+        del units[self.tbsp]
+        unit_before(self.tbsp)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def tsp_b(self):
+        units = self.units.copy()
+        del units[self.tsp]
+        unit_before(self.tsp)
+        for key, value in units.items():
+            before.menu.add_command(label=key, command=value[0])
+
+    def cubm_a(self):
+        units = self.units.copy()
+        del units[self.cubm]
+        unit_after(self.cubm)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def litre_a(self):
+        units = self.units.copy()
+        del units[self.litre]
+        unit_after(self.litre)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def milli_a(self):
+        units = self.units.copy()
+        del units[self.milli]
+        unit_after(self.milli)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def cubft_a(self):
+        units = self.units.copy()
+        del units[self.cubft]
+        unit_after(self.cubft)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def cubin_a(self):
+        units = self.units.copy()
+        del units[self.cubin]
+        unit_after(self.cubin)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def gallon_a(self):
+        units = self.units.copy()
+        del units[self.gallon]
+        unit_after(self.gallon)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def quart_a(self):
+        units = self.units.copy()
+        del units[self.quart]
+        unit_after(self.quart)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def pint_a(self):
+        units = self.units.copy()
+        del units[self.pint]
+        unit_after(self.pint)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def cup_a(self):
+        units = self.units.copy()
+        del units[self.cup]
+        unit_after(self.cup)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def floz_a(self):
+        units = self.units.copy()
+        del units[self.floz]
+        unit_after(self.floz)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def tbsp_a(self):
+        units = self.units.copy()
+        del units[self.tbsp]
+        unit_after(self.tbsp)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+    def tsp_a(self):
+        units = self.units.copy()
+        del units[self.tsp]
+        unit_after(self.tsp)
+        for key, value in units.items():
+            after.menu.add_command(label=key, command=value[1])
+
+# Digital Storage Menus ========================================================
 
 class Digital_Storage():
     def __init__(self):
@@ -1089,7 +1275,7 @@ class Digital_Storage():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
-# Energy Menus ===================================================================
+# Energy Menus =================================================================
 
 class Energy():
     def __init__(self):
@@ -1245,7 +1431,7 @@ class Energy():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
-# Pressure Menus ===================================================================
+# Pressure Menus ===============================================================
 
 class Pressure():
     def __init__(self):
@@ -1328,7 +1514,7 @@ class Pressure():
         for key, value in units.items():
             after.menu.add_command(label=key, command=value[1])
 
-# Frequency Menus ===================================================================
+# Frequency Menus ==============================================================
 
 class Frequency():
     def __init__(self):
@@ -1460,8 +1646,9 @@ def equals_button():
 
 # Creates dropdown menu displaying each type of measurement
 measure_types = {'Temperature': Temperature, 'Length': Length, 'Mass': Mass, 'Time': Time, 
-                 'Speed': Speed, 'Angle': Angle, 'Area': Area, 'Digital Storage': Digital_Storage,
-                 'Energy': Energy, 'Pressure': Pressure, 'Frequency': Frequency}
+                 'Speed': Speed, 'Angle': Angle, 'Area': Area, 'Volume': Volume,
+                 'Digital Storage': Digital_Storage, 'Energy': Energy, 'Pressure': Pressure,
+                 'Frequency': Frequency}
 measurements = Menubutton(window, text='Temperature', font=(0))
 measurements.menu = Menu(measurements, font=(0), tearoff=0)
 measurements['menu'] = measurements.menu
